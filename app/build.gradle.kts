@@ -38,6 +38,23 @@ fun signingProperty(name: String): String? {
     return providers.gradleProperty(name).orNull ?: localProperties.getProperty(name)
 }
 
+fun adProperty(name: String, fallback: String): String {
+    return providers.gradleProperty(name).orNull
+        ?: localProperties.getProperty(name)
+        ?: fallback
+}
+
+val googleMobileAdsTestAppId = "ca-app-pub-3940256099942544~3347511713"
+val googleAppOpenTestAdUnitId = "ca-app-pub-3940256099942544/9257395921"
+val releaseGoogleMobileAdsAppId = adProperty(
+    name = "velaris.ads.release.appId",
+    fallback = googleMobileAdsTestAppId,
+)
+val releaseAppOpenAdUnitId = adProperty(
+    name = "velaris.ads.release.appOpenAdUnitId",
+    fallback = googleAppOpenTestAdUnitId,
+)
+
 android {
     defaultConfig {
         applicationId = "com.wujia.velaris"
@@ -45,20 +62,16 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders["googleMobileAdsApplicationId"] = "ca-app-pub-3940256099942544~3347511713"
+        manifestPlaceholders["googleMobileAdsApplicationId"] = googleMobileAdsTestAppId
+        manifestPlaceholders["appOpenAdUnitId"] = googleAppOpenTestAdUnitId
     }
 
     productFlavors {
         named("demo") {
             applicationIdSuffix = ""
-            manifestPlaceholders["googleMobileAdsApplicationId"] = "ca-app-pub-3940256099942544~3347511713"
         }
         named("prod") {
             applicationIdSuffix = ""
-            manifestPlaceholders["googleMobileAdsApplicationId"] =
-                providers.gradleProperty("velaris.googleMobileAdsAppId")
-                    .orElse("ca-app-pub-3940256099942544~3347511713")
-                    .get()
         }
     }
 
@@ -77,11 +90,15 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
+            manifestPlaceholders["googleMobileAdsApplicationId"] = googleMobileAdsTestAppId
+            manifestPlaceholders["appOpenAdUnitId"] = googleAppOpenTestAdUnitId
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
                 .map(String::toBooleanStrict).getOrElse(true)
             applicationIdSuffix = ".release"
+            manifestPlaceholders["googleMobileAdsApplicationId"] = releaseGoogleMobileAdsAppId
+            manifestPlaceholders["appOpenAdUnitId"] = releaseAppOpenAdUnitId
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

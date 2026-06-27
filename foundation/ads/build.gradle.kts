@@ -52,7 +52,7 @@ android {
         buildConfigField(
             "String",
             "ADS_APP_OPEN_AD_UNIT_ID",
-            "\"${providers.gradleProperty("velaris.appOpenAdUnitId").orElse("ca-app-pub-3940256099942544/9257395921").get()}\"",
+            "\"ca-app-pub-3940256099942544/9257395921\"",
         )
         buildConfigField(
             "long",
@@ -70,6 +70,7 @@ android {
             "\"${providers.gradleProperty("velaris.rewardedNewSceneSaveAdUnitId").orElse("ca-app-pub-3940256099942544/5224354917").get()}\"",
         )
     }
+
 }
 
 dependencies {

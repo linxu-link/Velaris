@@ -27,6 +27,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import com.wujia.foundation.ads.AdsInitializationResult
 import com.wujia.foundation.ads.AdsInitializer
 import com.wujia.foundation.ads.AppOpenAdManager
@@ -35,7 +36,9 @@ import com.wujia.foundation.designsystem.theme.ProvideVelarisTheme
 import com.wujia.foundation.model.settings.ThemeSettingsRepository
 import com.wujia.velaris.ui.VelarisApp
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 import kotlin.getValue
@@ -56,7 +59,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
-        shouldAttemptColdStartAppOpenAd = savedInstanceState == null
+        shouldAttemptColdStartAppOpenAd =
+            (application as? VelarisApplication)?.consumeColdStartLaunch() == true
         Timber.d(
             "MainActivity onCreate: shouldAttemptColdStartAppOpenAd=%s, savedInstanceState=%s",
             shouldAttemptColdStartAppOpenAd,
@@ -82,6 +86,7 @@ class MainActivity : ComponentActivity() {
             Timber.d("MainActivity warm start: skip cold start app open")
             viewModel.onAppOpenAdNotRequested()
         }
+        logAdvertisingIdOnce()
         initializeAds()
     }
 
@@ -133,6 +138,26 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private fun logAdvertisingIdOnce() {
+        if (hasLoggedAdvertisingId) return
+        hasLoggedAdvertisingId = true
+        lifecycleScope.launch {
+            runCatching {
+                withContext(Dispatchers.IO) {
+                    AdvertisingIdClient.getAdvertisingIdInfo(this@MainActivity)
+                }
+            }.onSuccess { info ->
+                Timber.w(
+                    "VERIFY AdvertisingId id=%s limitAdTracking=%s",
+                    info.id,
+                    info.isLimitAdTrackingEnabled,
+                )
+            }.onFailure { error ->
+                Timber.w("VERIFY AdvertisingId read failed: %s", error.message)
+            }
+        }
+    }
+
     private fun showColdStartAppOpenAd() {
         lifecycleScope.launch {
             Timber.d("MainActivity showColdStartAppOpenAd start")
@@ -170,5 +195,10 @@ class MainActivity : ComponentActivity() {
             Timber.d("MainActivity preloadColdStartAppOpenAd start")
             appOpenAdManager.preload(this@MainActivity)
         }
+    }
+
+    private companion object {
+        @Volatile
+        private var hasLoggedAdvertisingId = false
     }
 }

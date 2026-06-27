@@ -30,6 +30,8 @@ private const val TAG = "[Velaris]"
 @HiltAndroidApp
 class VelarisApplication : Application() {
 
+    private var isFirstActivityLaunchInProcess = true
+
     override fun onCreate() {
         super.onCreate()
         plantTimber()
@@ -69,6 +71,13 @@ class VelarisApplication : Application() {
 
     private fun initHiToolKit() {
         HiToolKit.init(this)
+    }
+
+    @Synchronized
+    fun consumeColdStartLaunch(): Boolean {
+        if (!isFirstActivityLaunchInProcess) return false
+        isFirstActivityLaunchInProcess = false
+        return true
     }
 }
 

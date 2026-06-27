@@ -1,73 +1,84 @@
 # Google Play 上架剩余合规风险
 
-更新时间：2026-06-26
+更新时间：2026-06-27
 
-本文只保留**当前代码里仍然存在**、在 Google Play 上架前需要继续处理的问题。已经修正或已经移除的历史问题不再记录。
+本文只保留**按当前代码检查后仍然存在**、在 Google Play 上架前需要继续确认的问题。已经修正或已经移除的历史问题不再记录。
 
 ## 风险总览
 
 | 优先级 | 风险项 | 当前状态 | 建议处理 |
 |---|---|---|---|
-| 高 | 隐私政策 URL 仍是占位符 | App 内已提供隐私入口，但实际打开的是 `https://example.com/velaris/privacy-policy` | 替换为真实公网 URL，并确保内容与 Play Console 申报一致 |
-| 高 | Data safety 仍需按 Ads SDK 实际情况申报 | 项目集成 Google Ads / UMP / Firebase，不能因为部分权限已移除就省略申报 | 按 SDK 实际数据处理情况填写 Data safety 和隐私政策 |
-| 中 | 冷启动开屏广告体验仍需验证 | 冷启动会尝试展示 App Open Ad | 用 release 包重点验证是否阻塞启动、是否在错误时机打断用户 |
+| 高 | Data safety 仍需按 SDK 实际行为申报 | 项目仍集成 Google Ads、Google UMP、Firebase / google-services；仅看 Manifest 权限是否移除并不足以完成申报 | 以 `release/prod` 包为准，按广告、同意、崩溃/配置相关 SDK 的实际数据处理行为填写 Data safety |
+| 中 | 冷启动 App Open Ad 的展示时机仍需 release 验证 | 冷启动时仍会 preload 并尝试展示 App Open Ad，但 splash 已不再依赖广告状态结束 | 用 `release/prod` 包验证是否只在真正冷启动触发、是否在错误时机打断用户、失败/超时时是否快速回到主界面 |
+| 中 | 隐私政策正文与最终申报内容仍需做一次一致性核对 | 应用内隐私入口、多语言隐私页面、UMP 隐私选项入口都已落地，但 Play Console、Data safety、对外隐私文案仍需要最终一致 | 提审前逐项核对隐私政策页面、应用内入口文案、Play Console 隐私政策链接和 Data safety 描述 |
 
 ## 详细问题
 
-### 1. 隐私政策 URL 仍未落地
+### 1. Data safety 仍然是主要合规项
 
-当前 settings 页面已经提供“隐私政策和广告隐私选项”入口，但实际打开的仍是占位地址：
+当前代码里可以确认的事实：
 
-- `feature/settings/impl/src/main/java/com/wujia/feature/settings/impl/ui/SettingsScreen.kt`
-- `PRIVACY_POLICY_URL = "https://example.com/velaris/privacy-policy"`
+- 主 Manifest 已移除 `AD_ID`、`ACCESS_ADSERVICES_AD_ID` 等权限声明
+- 应用仍集成 Google Mobile Ads
+- 应用仍集成 Google UMP（用户同意管理）
+- 工程仍接入 Firebase / `google-services`
 
 这意味着：
 
-1. App 内虽然有入口，但不满足真实可访问的隐私政策要求。
-2. Play Console 的隐私政策链接与应用内文案容易不一致。
+1. 不能因为某些广告权限已从 Manifest 移除，就默认认为 Play Console 的 Data safety 可以不填或少填。
+2. Google Play 关注的是**应用及其集成 SDK 的实际数据处理行为**，而不只是最终 manifest 里保留了哪些权限。
+3. 隐私政策和 Data safety 的描述必须能解释当前代码中广告、同意管理、设备标识符、诊断/崩溃相关能力的实际用途。
 
 建议：
 
-1. 替换为正式公网地址。
-2. 隐私政策正文至少覆盖广告 SDK、同意管理、用户主动选择的本地媒体素材用途。
-3. 保证 App 内入口、Play Console 链接、Data safety 描述三者一致。
+1. 以 `prodRelease` 或最终提审包为准，重新核对 Google Ads、UMP、Firebase 的实际启用状态。
+2. 按最终集成结果填写 Data safety，不要沿用旧结论。
+3. 如果某项 SDK 仅保留接入但未启用，也要在提审前明确证据链，而不是仅靠主观判断。
 
-### 2. Data safety 不能只看 Manifest 权限
+### 2. 冷启动 App Open Ad 需要看 release 真实体验
 
-当前项目已集成以下能力：
+当前 `MainActivity` 的冷启动流程中，仍会：
 
-- Google Mobile Ads
-- Google UMP（用户同意管理）
-- Firebase / google-services 集成
-
-虽然主 Manifest 已显式移除 `AD_ID`、`ACCESS_ADSERVICES_AD_ID` 等权限，也关闭了部分 analytics/AD_ID collection 开关，但这**不等于**可以跳过 Data safety 申报。Google Play 看的是应用和 SDK 的实际数据处理行为，不只是你最终保留了哪些权限声明。
-
-建议：
-
-1. 按 Ads SDK、UMP、Firebase 在 release 包中的实际行为填写 Data safety。
-2. 不要沿用“Manifest 已移除相关权限，所以这项没风险”的判断。
-3. 提审前用 release 变体重新核对一次 merged manifest、运行时同意流程、隐私入口文案。
-
-### 3. 冷启动开屏广告仍有体验风险
-
-当前 `MainActivity` 在冷启动时会：
-
-1. 标记 cold start app open pending
+1. 在真正冷启动时标记待展示状态
 2. preload App Open Ad
-3. 在 `onPostCreate` 后尝试 `showIfAvailable`
+3. 在后续时机尝试 `showIfAvailable`
 
-这类广告本身不一定违规，但属于 Google Play 审核比较敏感的场景。当前代码虽然有 timeout / unavailable 分支，但是否真正“不阻塞启动、不在错误时机打断用户”，还需要以 release 包实测为准。
+当前风险不在于“splash 必须等广告结束”这一旧问题，而在于：
 
-重点验证：
+1. 广告是否只在真正冷启动时展示
+2. 广告不可用、超时、失败时，是否快速回到主界面
+3. 从后台返回、旋转、重建 Activity 等场景下，是否误触发展示
+4. 全屏广告关闭路径是否清晰，是否造成用户误解或打断核心体验
 
-1. 首次冷启动时 splash 是否被广告流程拖住过久。
-2. 广告不可用、超时、失败时，是否能快速进入主界面。
-3. 是否只在真正冷启动时展示，而不是返回前台、切后台再回来时误触发。
-4. 全屏广告关闭路径是否清晰。
+建议：
+
+1. 用 `release/prod` 包在真实设备上验证冷启动、热启动、回前台三类场景。
+2. 至少覆盖广告可用、不可用、超时、展示失败四种结果。
+3. 记录一轮验证结果，作为提审前自检依据。
+
+### 3. 隐私政策、应用内入口、Play Console 申报需要最终一致
+
+当前代码里，应用内已经具备：
+
+- 设置页“隐私与广告”入口
+- 多语言隐私政策页面跳转
+- UMP 隐私选项管理入口
+
+这部分已经不是“缺入口”问题，剩余风险在于**一致性**：
+
+1. GitHub Pages 上的公开隐私政策内容，是否与当前应用功能一致
+2. Play Console 中填写的隐私政策链接，是否与应用内跳转地址一致
+3. Data safety 中关于广告、同意管理、本地媒体访问的描述，是否与隐私政策正文一致
+
+建议：
+
+1. 提审前逐语言检查一次隐私政策页面是否可访问、内容是否最新。
+2. 确认 Play Console 使用的隐私政策 URL 与应用内入口一致。
+3. 以当前隐私政策正文为准，反向核对 Data safety 文案，避免两边口径不一致。
 
 ## 上架前最小检查清单
 
-1. 替换真实隐私政策 URL。
-2. 用 release / prod 包验证 UMP 同意流程。
-3. 用 release / prod 包验证冷启动 App Open Ad 的真实体验。
-4. 按 Ads SDK / UMP / Firebase 的实际行为填写 Data safety。
+1. 用 `release/prod` 包重新核对 Google Ads、UMP、Firebase 的实际启用与数据处理行为。
+2. 完成 Google Play Data safety 填写，并与隐私政策正文保持一致。
+3. 用 `release/prod` 包验证冷启动 App Open Ad 的展示时机和失败回退路径。
+4. 检查多语言隐私政策页面、应用内入口、Play Console 链接是否一致且可访问。

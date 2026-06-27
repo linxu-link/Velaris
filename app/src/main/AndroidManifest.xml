@@ -44,6 +44,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="${googleMobileAdsApplicationId}" />
+        <meta-data
+            android:name="com.wujia.velaris.ads.APP_OPEN_AD_UNIT_ID"
+            android:value="${appOpenAdUnitId}" />
 
         <!-- Disable Firebase analytics by default. This setting is overwritten for the `prod`
         flavor (see src/prod/AndroidManifest.xml) -->
