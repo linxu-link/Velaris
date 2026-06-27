@@ -68,6 +68,7 @@ fun SceneControlPanel(
     SwipeUpPanel(
         visible = showPanel,
         onVisibleChange = onVisibleChange,
+        debugName = "scene_control",
         panelHeight = panelHeight,
         edgePadding = edgePadding,
         modifier = modifier,

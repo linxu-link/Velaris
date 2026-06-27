@@ -42,4 +42,5 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.timber)
 }

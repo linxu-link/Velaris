@@ -17,6 +17,7 @@ package com.wujia.feature.settings.impl
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,17 +47,22 @@ fun SettingsPanel(
     edgePadding: Dp = 8.dp,
     playerConfig: VelarisPlayerConfig = VelarisPlayerConfig.Balanced,
 ) {
+    val scrollState = rememberScrollState()
+
     // 向整个设置面板子树提供播放器配置（PowerSaver/Balanced/Quality 会影响缓存策略等）
     ProvideVelarisPlayerConfig(playerConfig) {
         SwipeUpPanel(
             visible = showPanel,
             onVisibleChange = onVisibleChange,
+            debugName = "settings",
             panelHeight = panelHeight,
             edgePadding = edgePadding,
+            canStartDragDown = { scrollState.value == 0 },
             modifier = modifier,
         ) {
             SettingsScreen(
                 modifier = Modifier.matchParentSize(),
+                scrollState = scrollState,
             )
         }
     }
@@ -69,6 +75,7 @@ private fun PreviewSettingsPanel() {
         SwipeUpPanel(
             visible = true,
             onVisibleChange = {},
+            debugName = "settings_preview",
         ) {
             Box(
                 modifier = Modifier.fillMaxSize(),

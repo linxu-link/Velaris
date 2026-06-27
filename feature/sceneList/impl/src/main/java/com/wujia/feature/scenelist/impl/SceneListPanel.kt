@@ -46,6 +46,7 @@ fun SceneListPanel(
     SwipeUpPanel(
         visible = showPanel,
         onVisibleChange = onVisibleChange,
+        debugName = "scene_list",
         panelHeight = panelHeight,
         edgePadding = edgePadding,
         modifier = modifier,

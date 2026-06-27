@@ -99,6 +99,8 @@ enum class VelarisGlassMaterial {
 fun Modifier.velarisGlassBlur(
     shape: Shape,
     blurRadius: Dp = 0.dp,
+    enableVibrancy: Boolean = true,
+    enableLens: Boolean = true,
     surfaceColor: Color = VelarisTheme.spec.colors.surface,
     surfaceAlpha: Float = 0f,
 ): Modifier {
@@ -107,15 +109,19 @@ fun Modifier.velarisGlassBlur(
         backdrop = state.source,
         shape = { shape },
         effects = {
-            vibrancy()
+            if (enableVibrancy) {
+                vibrancy()
+            }
             if (blurRadius > 0.dp) {
                 blur(blurRadius.toPx())
             }
-            if (Build.VERSION.SDK_INT >= 33 && shape is CornerBasedShape) {
+            if (enableLens && Build.VERSION.SDK_INT >= 33 && shape is CornerBasedShape) {
                 lens(
                     refractionHeight = 16.dp.toPx(),
                     refractionAmount = 63.dp.toPx(),
                 )
+            } else if (!enableLens && blurRadius <= 0.dp) {
+                // 轻量模式下避免额外 fallback blur 开销
             } else {
                 blur(4.dp.toPx())
             }

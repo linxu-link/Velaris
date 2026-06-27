@@ -53,6 +53,7 @@ fun SceneParticlePanel(
     SwipeUpPanel(
         visible = showPanel,
         onVisibleChange = onVisibleChange,
+        debugName = "scene_particle",
         panelHeight = panelHeight,
         edgePadding = edgePadding,
         modifier = modifier,

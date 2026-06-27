@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -70,6 +71,7 @@ private fun SettingsPage(
 ) {
     val spec = VelarisTheme.spec
     val blurState = rememberVelarisBlurState()
+    val scrollState = rememberScrollState()
 
     // 提供模糊状态，使子内容可使用 velarisBlurSource / velarisGlassBlur 实现毛玻璃效果
     ProvideVelarisBlurState(blurState) {
@@ -131,7 +133,10 @@ private fun SettingsPage(
 
                 Spacer(modifier = Modifier.height(spec.spacing.medium))
 
-                SettingsScreen(modifier = Modifier.fillMaxSize())
+                SettingsScreen(
+                    modifier = Modifier.fillMaxSize(),
+                    scrollState = scrollState,
+                )
             }
         }
     }

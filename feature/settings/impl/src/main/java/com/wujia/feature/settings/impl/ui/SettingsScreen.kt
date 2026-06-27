@@ -15,6 +15,7 @@
  */
 package com.wujia.feature.settings.impl.ui
 
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,7 +25,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -59,6 +59,7 @@ private const val PRIVACY_POLICY_BASE_URL = "https://linxu-link.github.io/Velari
 @Composable
 internal fun SettingsScreen(
     modifier: Modifier = Modifier,
+    scrollState: ScrollState,
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -66,6 +67,7 @@ internal fun SettingsScreen(
     SettingsContent(
         modifier = modifier,
         selectedThemePreset = state.selectedThemePreset,
+        scrollState = scrollState,
         onPlaybackSettingsClick = viewModel::onPlaybackSettingsClick,
         onThemeClick = viewModel::onThemeClick,
         onPrivacyClick = { uriHandler.openUri(privacyPolicyUrlForLocale()) },
@@ -77,13 +79,13 @@ internal fun SettingsScreen(
 private fun SettingsContent(
     modifier: Modifier = Modifier,
     selectedThemePreset: VelarisThemePreset,
+    scrollState: ScrollState,
     onPlaybackSettingsClick: () -> Unit,
     onThemeClick: () -> Unit,
     onPrivacyClick: () -> Unit,
     onAboutClick: () -> Unit,
 ) {
     val spec = VelarisTheme.spec
-    val scrollState = rememberScrollState()
 
     Column(
         modifier = modifier
@@ -190,6 +192,7 @@ private fun SettingsRow(
 private fun SettingsScreenPreview() {
     SettingsContent(
         selectedThemePreset = VelarisThemePreset.Gold,
+        scrollState = androidx.compose.foundation.rememberScrollState(),
         onPlaybackSettingsClick = {},
         onThemeClick = {},
         onPrivacyClick = {},
