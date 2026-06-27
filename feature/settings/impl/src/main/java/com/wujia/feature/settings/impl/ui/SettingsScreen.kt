@@ -52,12 +52,9 @@ import com.wujia.foundation.designsystem.preview.LandscapePreviews
 import com.wujia.foundation.designsystem.theme.VelarisTheme
 import com.wujia.foundation.model.theme.VelarisThemePreset
 import com.wujia.foundation.ui.R
+import java.util.Locale
 
-/**
- * 隐私政策 URL。
- * 注意：上架前必须替换为真实的公网地址，并确保与 Google Play Console 中 Data safety / 隐私政策声明一致。
- */
-private const val PRIVACY_POLICY_URL = "https://example.com/velaris/privacy-policy"
+private const val PRIVACY_POLICY_BASE_URL = "https://linxu-link.github.io/Velaris/"
 
 @Composable
 internal fun SettingsScreen(
@@ -71,10 +68,7 @@ internal fun SettingsScreen(
         selectedThemePreset = state.selectedThemePreset,
         onPlaybackSettingsClick = viewModel::onPlaybackSettingsClick,
         onThemeClick = viewModel::onThemeClick,
-        onPrivacyClick = {
-            // 打开外部隐私政策（合规要求必须可访问真实地址）
-            uriHandler.openUri(PRIVACY_POLICY_URL)
-        },
+        onPrivacyClick = { uriHandler.openUri(privacyPolicyUrlForLocale()) },
         onAboutClick = viewModel::onAboutClick,
     )
 }
@@ -213,4 +207,16 @@ private fun VelarisThemePreset.labelResId(): Int = when (this) {
     VelarisThemePreset.Ocean -> R.string.settings_theme_ocean
     VelarisThemePreset.Forest -> R.string.settings_theme_forest
     VelarisThemePreset.Twilight -> R.string.settings_theme_twilight
+}
+
+private fun privacyPolicyUrlForLocale(locale: Locale = Locale.getDefault()): String {
+    val language = locale.language.lowercase(Locale.ROOT)
+    val country = locale.country.uppercase(Locale.ROOT)
+    val path = when {
+        language == "zh" && country in setOf("TW", "HK", "MO") -> "privacy-policy.zh-TW.html"
+        language == "zh" -> "privacy-policy.html"
+        language == "ja" -> "privacy-policy.ja.html"
+        else -> "privacy-policy.en.html"
+    }
+    return PRIVACY_POLICY_BASE_URL + path
 }
