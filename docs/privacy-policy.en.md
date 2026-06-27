@@ -8,7 +8,7 @@ Atmosphere Clock is a landscape immersive scene app for browsing and editing loc
 
 - App Name: Atmosphere Clock
 - Developer: WuJia
-- Contact: TODO: Replace with a real email address or public contact page before release
+- Contact: wujia.link@gmail.com
 
 ## What Data We Process
 
