@@ -1,0 +1,338 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <!-- App Info -->
+    <string name="app_name">Atmosphere Clock</string>
+    <string name="app_tagline">In the hustle, seek a lamp of calm light</string>
+
+    <!-- Common Actions -->
+    <string name="common_cancel">Cancel</string>
+    <string name="common_confirm">Confirm</string>
+    <string name="common_close">Close</string>
+    <string name="common_back">Back</string>
+    <string name="common_save">Save</string>
+    <string name="common_next">Next</string>
+    <string name="common_settings">Settings</string>
+    <string name="common_add">Add</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_play">Play</string>
+    <string name="common_pause">Pause</string>
+    <string name="common_stop">Stop</string>
+
+    <!-- Particle Effects -->
+    <string name="particle_none">None</string>
+    <string name="particle_rain">Rain</string>
+    <string name="particle_snow">Snow</string>
+    <string name="particle_fireflies">Fireflies</string>
+    <string name="particle_quality_low">Low</string>
+    <string name="particle_quality_medium">Medium</string>
+    <string name="particle_quality_high">High</string>
+    <string name="particle_quality_ultra">Ultra</string>
+    <string name="particle_effect">Particle Effect</string>
+    <string name="particle_property">Particle Property</string>
+    <string name="particle_quality">Quality</string>
+    <string name="particle_foreground_streak">Foreground Streak</string>
+    <string name="particle_rain_on_glass">Rain on Glass</string>
+    <string name="particle_intensity">Intensity</string>
+    <string name="particle_wind">Wind</string>
+    <string name="particle_effect_display">Particle Effect</string>
+
+    <!-- Player -->
+    <string name="player_mix">Mix</string>
+    <string name="player_sound">Sound</string>
+    <string name="player_wind">Wind</string>
+    <string name="player_rain">Rain</string>
+    <string name="player_snow">Snow</string>
+    <string name="player_wind_snow_fireplace">Wind · Snow · Fireplace</string>
+    <string name="sound_settings">Sound Settings</string>
+
+    <!-- Timer -->
+    <string name="timer_close">Timer Off</string>
+    <string name="timer_smart_fade">Smart Fade</string>
+    <string name="timer_smart_fade_desc">Gradually lower volume in the last 3–5 minutes</string>
+    <string name="timer_15min">15 min</string>
+    <string name="timer_25min">25 min</string>
+    <string name="timer_45min">45 min</string>
+    <string name="timer_custom">Custom</string>
+    <string name="timer_custom_time">Custom Time</string>
+    <string name="timer_clock">Clock</string>
+    <string name="timer_hour">h</string>
+    <string name="timer_minute">m</string>
+    <string name="timer_label">Timer</string>
+    <string name="timer_remaining">Remaining %d%%</string>
+    <string name="timer_stopped">Stopped</string>
+    <string name="alarm_reminder_title">Alarm Reminder</string>
+    <string name="alarm_reminder_desc">The timer has ended. Tap confirm to stop the alarm.</string>
+    <string name="alarm_reminder_confirm">Confirm</string>
+
+    <!-- Scene List -->
+    <string name="scene_list_title">Scene List</string>
+    <string name="scene_list_drag_hint">Long press to drag and reorder</string>
+    <string name="scene_list_drag_guide_title">Long Press to Drag</string>
+    <string name="scene_list_drag_guide_desc">Long press a scene card and drag to reorder scenes.</string>
+    <string name="scene_list_preset_not_deletable">Preset scenes cannot be deleted</string>
+    <string name="scene_list_delete_scene">Delete Scene</string>
+    <string name="scene_list_add_scene">Add Scene</string>
+
+    <!-- Scene Edit -->
+    <string name="scene_edit_title">Edit Scene</string>
+    <string name="scene_edit_save">Save</string>
+    <string name="scene_edit_save_new">Save New Scene</string>
+    <string name="scene_edit_watch_ad">Watch Ad to Save</string>
+    <string name="scene_edit_cancelled">Save Cancelled</string>
+    <string name="scene_edit_ad_rejected">No ad reward received, save cancelled</string>
+    <string name="scene_edit_saving">Saving</string>
+    <string name="scene_edit_success">Saved Successfully</string>
+    <string name="scene_edit_failed">Save Failed</string>
+    <string name="scene_edit_step1">Step 1: Select Material</string>
+    <string name="scene_edit_step2">Step 2: Select Sound</string>
+    <string name="scene_edit_step3">Step 3: Particle Effect</string>
+    <string name="scene_edit_step4">Step 4: Preview &amp; Save</string>
+    <string name="scene_edit_select_material">Select Material</string>
+    <string name="scene_edit_select_sound">Select Sound</string>
+    <string name="scene_edit_particle_effect">Particle Effect</string>
+    <string name="scene_edit_preview_save">Preview &amp; Save</string>
+    <string name="scene_edit_preview">Scene Preview</string>
+    <string name="scene_edit_pause_preview">Pause Preview</string>
+    <string name="scene_edit_play_preview">Play Preview</string>
+    <string name="scene_edit_scene_info">Scene Info</string>
+    <string name="scene_edit_title_label">Title</string>
+    <string name="scene_edit_description">Description</string>
+    <string name="scene_edit_preset_material">Preset Material</string>
+    <string name="scene_edit_local_image">Local Image</string>
+    <string name="scene_edit_local_video">Local Video</string>
+    <string name="scene_edit_pick_local_image">Pick Image from Device</string>
+    <string name="scene_edit_pick_local_video">Pick Video from Device</string>
+    <string name="scene_edit_pick_local_audio">Pick Audio from Device</string>
+    <string name="scene_edit_loading_media">Loading Media Library</string>
+    <string name="scene_edit_no_material">No available material found</string>
+    <string name="scene_edit_no_local_audio">No local audio found</string>
+    <string name="scene_edit_need_permission">Media library access required</string>
+    <string name="scene_edit_media_permission_title">Request Media Library Permission</string>
+    <string name="scene_edit_media_permission_message">Access to media library is needed to read local images and videos. You can still use presets if denied.</string>
+    <string name="scene_edit_media_permission_allow">Allow Access</string>
+    <string name="scene_edit_no_particle">No particle effect selected</string>
+    <string name="scene_edit_reselect_sound">Reselect Sound</string>
+    <string name="scene_edit_reselect_material">Reselect Material</string>
+    <string name="scene_edit_reselect_particle">Reselect Particle</string>
+    <string name="scene_edit_selected">Selected</string>
+    <string name="scene_edit_click_to_select">Tap to Select</string>
+    <string name="scene_edit_previewing">Previewing</string>
+    <string name="scene_edit_previewing_title">Previewing: %s</string>
+    <string name="scene_edit_click_to_preview">Tap to Preview</string>
+    <string name="scene_edit_click_to_preview_title">Tap to Preview: %s</string>
+    <string name="scene_edit_playing">Playing</string>
+    <string name="scene_edit_paused">Paused</string>
+    <string name="scene_edit_no_sound_selected">No sound selected</string>
+    <string name="scene_edit_custom_scene">Custom Scene</string>
+    <string name="scene_edit_enter_title">Please enter scene title</string>
+    <string name="scene_edit_enter_description">Please enter scene description</string>
+    <string name="scene_edit_title_placeholder">Enter scene title</string>
+    <string name="scene_edit_description_placeholder">Enter scene description</string>
+    <string name="scene_edit_current_image">Current Image</string>
+    <string name="scene_edit_current_video">Current Video</string>
+    <string name="scene_edit_read_media_failed">Failed to read media library</string>
+    <string name="scene_edit_no_scene_found">No scene found</string>
+    <string name="scene_edit_max_sound_limit">Maximum %d sound materials</string>
+    <string name="scene_edit_ad_hint">Watch a short ad before saving a new scene...</string>
+    <string name="scene_edit_sounds">Sounds</string>
+    <string name="scene_edit_select_sound_prompt">Please select sound material</string>
+    <string name="scene_edit_select_scene_sound">Select scene sound</string>
+    <string name="scene_edit_select_scene_material">Select scene material</string>
+    <string name="scene_edit_param_intensity">Intensity</string>
+    <string name="scene_edit_param_wind">Wind</string>
+    <string name="scene_edit_params_display">Intensity %1$d%%  Wind %2$d%%</string>
+    <string name="scene_category_generic">Scene</string>
+    <string name="scene_category_title_format">%s Scene</string>
+
+    <!-- Scene Control -->
+    <string name="scene_control_settings">Display Settings</string>
+    <string name="scene_control_brightness">Brightness</string>
+    <string name="scene_control_dark">Atmosphere</string>
+    <string name="scene_control_adjust_details">Adjust Details</string>
+    <string name="scene_control_sound">Sound</string>
+    <string name="scene_control_countdown_clock">Page-Turn Clock</string>
+    <string name="scene_control_countdown_clock_desc">Show page-turn clock during playback</string>
+    <string name="clock_audio_label">Clock</string>
+    <string name="scene_control_alarm_reminder">Timer Alarm Reminder</string>
+    <string name="scene_control_alarm_reminder_desc">Ring alarm automatically when timer ends</string>
+    <string name="scene_control_countdown_clock_position">Clock Position</string>
+    <string name="scene_control_countdown_clock_position_center">Center</string>
+    <string name="scene_control_countdown_clock_position_top_left">Top Left</string>
+    <string name="scene_control_countdown_clock_position_bottom_left">Bottom Left</string>
+    <string name="scene_control_countdown_clock_position_top_right">Top Right</string>
+    <string name="scene_control_countdown_clock_position_bottom_right">Bottom Right</string>
+    <string name="scene_control_default_name">Wind-Snow Night Return</string>
+    <string name="scene_control_snow_sound">Snow Sound</string>
+    <string name="scene_control_rain_sound">Rain Sound</string>
+    <string name="scene_control_wind_sound">Wind Sound</string>
+    <string name="scene_control_atmosphere">Atmosphere</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_playback">Playback Settings</string>
+    <string name="settings_playback_desc">Default volume, timer and immersion options</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_desc">Choose overall interface color, currently %s</string>
+    <string name="settings_theme_dialog_desc">Preset themes will sync global accent color, card borders and highlight effects. Changes take effect immediately.</string>
+    <string name="settings_theme_gold">Warm Gold Brown</string>
+    <string name="settings_theme_gold_desc">Soft and warm gold-brown accent</string>
+    <string name="settings_theme_ocean">Wind Bell Blue</string>
+    <string name="settings_theme_ocean_desc">Clear and calm with a touch of wooden warmth</string>
+    <string name="settings_theme_forest">Mist Forest Green</string>
+    <string name="settings_theme_forest_desc">Softer and more natural green accent</string>
+    <string name="settings_theme_twilight">Twilight Blue Purple</string>
+    <string name="settings_theme_twilight_desc">Quiet, night-like cool tone theme</string>
+    <string name="settings_privacy">Privacy &amp; Ads</string>
+    <string name="settings_privacy_desc">View privacy policy and ad privacy options</string>
+    <string name="settings_about">About %1$s</string>
+    <string name="settings_about_desc">Version info and open source licenses</string>
+
+    <!-- About Dialog -->
+    <string name="about_tagline">An immersive scene space for focus and sleep</string>
+    <string name="about_version">Version</string>
+    <string name="about_author">Author</string>
+    <string name="about_license">License</string>
+
+    <!-- Playback Settings Dialog -->
+    <string name="playback_select_profile">Select playback profile suitable for device performance</string>
+    <string name="playback_power_saver">Power Saver</string>
+    <string name="playback_power_saver_desc">Reduce resource usage, suitable for low-end or overheating devices</string>
+    <string name="playback_balanced">Balanced</string>
+    <string name="playback_balanced_desc">Balance performance and experience (default)</string>
+    <string name="playback_quality">Quality</string>
+    <string name="playback_quality_desc">Retain richer playback experience, suitable for high-end devices</string>
+
+    <!-- Privacy Dialog -->
+    <string name="privacy_no_collect">This app does not actively collect, upload or sell user personal information.</string>
+    <string name="privacy_google_ads">This app integrates Google Ad Services. The Google Ad SDK may process device identifiers, ad IDs, approximate location, ad interactions etc. according to Google\'s own policy for ad delivery, frequency capping, anti-fraud and measurement.</string>
+    <string name="privacy_consent_management">If your region requires ad consent management, this app will use Google\'s consent management form to handle ad privacy options.</string>
+    <string name="privacy_consent_status">Consent status: %s</string>
+    <string name="privacy_manage_options">Manage ad privacy options</string>
+
+    <!-- Sound Categories -->
+    <string name="sound_nature">Nature</string>
+    <string name="sound_healing">Healing</string>
+    <string name="sound_focus">Focus</string>
+    <string name="sound_sleep">Sleep</string>
+    <string name="sound_reading">Reading</string>
+
+    <!-- Step Indicator -->
+    <string name="step_add_scene">Add Scene</string>
+    <string name="step1_title">Step 1: Select Material</string>
+
+    <!-- Tab Labels -->
+    <string name="tab_focus_scene">Focus Scenes</string>
+    <string name="tab_sleep_scene">Sleep Scenes</string>
+
+    <!-- Favorites -->
+    <string name="favorite_scene">Favorite Scene</string>
+    <string name="favorite">Favorite</string>
+
+    <!-- Hints -->
+    <string name="hint_swipe_up">Swipe up to edit</string>
+    <string name="scene_guide_logo_title">Scene List</string>
+    <string name="scene_guide_logo_desc">Open the scene list here to quickly switch to other presets or custom scenes.</string>
+    <string name="scene_guide_player_title">Playback Control</string>
+    <string name="scene_guide_player_desc">Responsible for playing and pausing the current scene, and adjusting volume.</string>
+    <string name="scene_guide_scene_swipe_title">Switch Scenes</string>
+    <string name="scene_guide_scene_swipe_desc">Swipe left or right on the screen to switch to the previous or next scene.</string>
+    <string name="scene_guide_swipe_title">Swipe Up Panel</string>
+    <string name="scene_guide_swipe_desc">Swipe up from here to open the panel for adjusting details, timer, particles and sound.</string>
+    <string name="scene_guide_timer_title">Timer Off</string>
+    <string name="scene_guide_timer_desc">Set the countdown time for timer off here.</string>
+    <string name="scene_sound_video_volume">Video</string>
+
+    <!-- Sync -->
+    <string name="sync_data">Syncing data…</string>
+
+    <!-- Seed Data - Scenes -->
+    <string name="seed_scene_wind_chime_title">Summer Wind Chimes</string>
+    <string name="seed_scene_wind_chime_subtitle">Gentle breeze, full of summer vibes</string>
+    <string name="seed_scene_after_rain_title">Rain-Soaked Street</string>
+    <string name="seed_scene_after_rain_subtitle">Rain-washed green steps, mountain mist hides the street</string>
+    <string name="seed_scene_rainy_cafe_title">Lakeside Café</string>
+    <string name="seed_scene_rainy_cafe_subtitle">A window of misty rain, half a cup of peace</string>
+    <string name="seed_scene_city_snow_title">Urban Winter Night</string>
+    <string name="seed_scene_city_snow_subtitle">Silver frost on rooftops, lights burning long</string>
+    <string name="seed_scene_book_room_title">Snowy Night Study</string>
+    <string name="seed_scene_book_room_subtitle">Candlelight with scrolls, viewing city snow from afar</string>
+    <string name="seed_scene_fireplace_snow_title">Forest Snow Cabin</string>
+    <string name="seed_scene_fireplace_snow_subtitle">Warm hearth for rest, quietly listening to falling snow</string>
+    <string name="seed_scene_under_moon_title">Moonlit Still Lake</string>
+    <string name="seed_scene_under_moon_subtitle">One cold moon, half lake of clear light</string>
+    <string name="seed_scene_stormy_bedroom_title">Rainy High-Rise Shelter</string>
+    <string name="seed_scene_stormy_bedroom_subtitle">Hearth fire for sleep, a room of dim light</string>
+    <string name="seed_scene_snow_night_title">Wind-Snow Night Return</string>
+    <string name="seed_scene_snow_night_subtitle">Moon sets on flat lake, wind and snow return to the hut</string>
+    <string name="seed_scene_train_night_title">Night Train Carriage</string>
+    <string name="seed_scene_train_night_subtitle">Train pierces the night, books accompany the journey</string>
+
+    <!-- Seed Data - Noises -->
+    <string name="seed_noise_rain_title">Rain</string>
+    <string name="seed_noise_rain_description">Fine raindrops fall continuously, suitable for reading, daydreaming and slow-paced work</string>
+    <string name="seed_noise_rain_heavy_title">Heavy Rain</string>
+    <string name="seed_noise_rain_heavy_description">Thicker rain curtain wraps the space, stronger immersion, easier to block out noise</string>
+    <string name="seed_noise_fireplace_title">Fireplace</string>
+    <string name="seed_noise_fireplace_description">Crackling of slowly burning wood adds stable warmth to the scene</string>
+    <string name="seed_noise_wind_title">Wind</string>
+    <string name="seed_noise_wind_description">Wind passing through forest gaps from afar, light presence but opens up the space</string>
+    <string name="seed_noise_ocean_title">Ocean Waves</string>
+    <string name="seed_noise_ocean_description">Tides push in and recede layer by layer, loose rhythm, good for emptying the mind</string>
+    <string name="seed_noise_piano_title">Piano</string>
+    <string name="seed_noise_piano_description">Low-saturation piano lines only as background, without stealing attention</string>
+    <string name="seed_noise_thunder_title">Thunder</string>
+    <string name="seed_noise_thunder_description">Distant thunder occasionally rolls by, adding depth to the night</string>
+    <string name="seed_noise_thunder_and_rain_title">Thunderstorm</string>
+    <string name="seed_noise_thunder_and_rain_description">Thunder and rain curtain layered, overall atmosphere more enclosed and quiet</string>
+    <string name="seed_noise_seagull_title">Seagulls</string>
+    <string name="seed_noise_seagull_description">Sea surface retains openness, occasional seagull calls, not too dense</string>
+    <string name="seed_noise_river_title">River</string>
+    <string name="seed_noise_river_description">Water flows along stone surface, uniform frequency, suitable for long-term companionship</string>
+    <string name="seed_noise_insects_title">Insects</string>
+    <string name="seed_noise_insects_description">Thin and continuous insect sounds push the scene toward a quieter night texture</string>
+    <string name="seed_noise_wind_chime_title">Wind Chimes</string>
+    <string name="seed_noise_wind_chime_description">Chimes appear infrequently, leaving more blank space, suitable as decorative layer</string>
+    <string name="seed_noise_page_turn_title">Page Turn</string>
+    <string name="seed_noise_page_turn_description">Page turn sound is light and short, suitable with study or reading scenes</string>
+    <string name="seed_noise_flip_clock_title">Flip Clock</string>
+    <string name="seed_noise_flip_clock_description">Mechanical page flip sound repeats at fixed rhythm, suitable for focus scenes needing time sense</string>
+    <string name="seed_noise_typing_title">Typing</string>
+    <string name="seed_noise_typing_description">Key press feedback clear but frequency band restrained, suitable for workspace atmosphere</string>
+    <string name="seed_noise_writing_title">Writing</string>
+    <string name="seed_noise_writing_description">Pen tip on paper friction is light, suitable for low-presence companionship</string>
+    <string name="seed_noise_train_title">Train</string>
+    <string name="seed_noise_train_description">Continuous and monotonous rolling sound, very suitable for nighttime relaxation or sleep</string>
+
+    <!-- Seed Data - Particles -->
+    <string name="seed_particle_light_rain_title">Light Rain</string>
+    <string name="seed_particle_light_rain_description">Only light thin rain lines retained, suitable for relatively quiet indoor scenes</string>
+    <string name="seed_particle_moderate_rain_title">Moderate Rain</string>
+    <string name="seed_particle_moderate_rain_description">Moderate rainfall with presence without overwhelming the main image</string>
+    <string name="seed_particle_heavy_rain_title">Heavy Rain</string>
+    <string name="seed_particle_heavy_rain_description">Image becomes denser and closer, suitable for enclosed rainy night atmosphere</string>
+    <string name="seed_particle_light_snow_title">Light Snow</string>
+    <string name="seed_particle_light_snow_description">Very light snowfall, mainly to add winter feel to the image</string>
+    <string name="seed_particle_moderate_snow_title">Moderate Snow</string>
+    <string name="seed_particle_moderate_snow_description">More complete snow surface, suitable for outdoor or night winter scenes</string>
+    <string name="seed_particle_blizzard_title">Blizzard</string>
+    <string name="seed_particle_blizzard_description">Stronger wind direction and snowfall, suitable for more enclosed, colder space atmosphere</string>
+    <string name="seed_particle_no_particle_title">No Effect</string>
+    <string name="seed_particle_no_particle_description">Pure background, no particle effect</string>
+    <string name="seed_particle_fireflies_title">Fireflies</string>
+    <string name="seed_particle_fireflies_description">Scattered warm lights slowly move in darkness, suitable for night lake and forest scenes</string>
+
+</resources>

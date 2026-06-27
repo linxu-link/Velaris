@@ -1,0 +1,24 @@
+*.iml
+.gradle
+.mimocode
+.codex
+.claude
+.agents
+.crush
+/local.properties
+.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.kotlin
+# Build directories
+**/build/
+**/build/**
+***/build/***
+****/build/****
+
+# Local release artifacts
+/tools/dist/

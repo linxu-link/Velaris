@@ -1,0 +1,338 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <!-- 应用信息 -->
+    <string name="app_name">雰囲気時計</string>
+    <string name="app_tagline">喧騒の中で、静かな灯を探す</string>
+
+    <!-- 通用操作 -->
+    <string name="common_cancel">キャンセル</string>
+    <string name="common_confirm">確認</string>
+    <string name="common_close">閉じる</string>
+    <string name="common_back">戻る</string>
+    <string name="common_save">保存</string>
+    <string name="common_next">次へ</string>
+    <string name="common_settings">設定</string>
+    <string name="common_add">追加</string>
+    <string name="common_delete">削除</string>
+    <string name="common_play">再生</string>
+    <string name="common_pause">一時停止</string>
+    <string name="common_stop">停止</string>
+
+    <!-- 粒子效果相关 -->
+    <string name="particle_none">なし</string>
+    <string name="particle_rain">雨</string>
+    <string name="particle_snow">雪</string>
+    <string name="particle_fireflies">ホタル</string>
+    <string name="particle_quality_low">低</string>
+    <string name="particle_quality_medium">中</string>
+    <string name="particle_quality_high">高</string>
+    <string name="particle_quality_ultra">超高</string>
+    <string name="particle_effect">粒子効果</string>
+    <string name="particle_property">粒子属性</string>
+    <string name="particle_quality">品質</string>
+    <string name="particle_foreground_streak">前景の水痕</string>
+    <string name="particle_rain_on_glass">ガラスに落ちる雨</string>
+    <string name="particle_intensity">強度</string>
+    <string name="particle_wind">風力</string>
+    <string name="particle_effect_display">粒子効果</string>
+
+    <!-- 播放器相关 -->
+    <string name="player_mix">ミックス</string>
+    <string name="player_sound">サウンド</string>
+    <string name="player_wind">風の音</string>
+    <string name="player_rain">雨音</string>
+    <string name="player_snow">雪音</string>
+    <string name="player_wind_snow_fireplace">風・雪・暖炉の音</string>
+    <string name="sound_settings">サウンド設定</string>
+
+    <!-- 定时器相关 -->
+    <string name="timer_close">タイマー終了</string>
+    <string name="timer_smart_fade">スマートフェード</string>
+    <string name="timer_smart_fade_desc">終了前3〜5分で音量を徐々に下げる</string>
+    <string name="timer_15min">15分</string>
+    <string name="timer_25min">25分</string>
+    <string name="timer_45min">45分</string>
+    <string name="timer_custom">カスタム</string>
+    <string name="timer_custom_time">カスタム時間</string>
+    <string name="timer_clock">時計</string>
+    <string name="timer_hour">時</string>
+    <string name="timer_minute">分</string>
+    <string name="timer_label">タイマー</string>
+    <string name="timer_remaining">残り %d%%</string>
+    <string name="timer_stopped">停止しました</string>
+    <string name="alarm_reminder_title">アラーム通知</string>
+    <string name="alarm_reminder_desc">タイマーが終了しました。確認をタップしてアラームを止めます。</string>
+    <string name="alarm_reminder_confirm">確認</string>
+
+    <!-- 场景列表 -->
+    <string name="scene_list_title">シーン一覧</string>
+    <string name="scene_list_drag_hint">長押しして並び替え</string>
+    <string name="scene_list_drag_guide_title">長押しでドラッグ</string>
+    <string name="scene_list_drag_guide_desc">シーンカードを長押ししてドラッグすると、順序を変更できます。</string>
+    <string name="scene_list_preset_not_deletable">プリセットシーンは削除できません</string>
+    <string name="scene_list_delete_scene">シーンを削除</string>
+    <string name="scene_list_add_scene">シーンを追加</string>
+
+    <!-- 场景编辑 -->
+    <string name="scene_edit_title">シーンを編集</string>
+    <string name="scene_edit_save">保存</string>
+    <string name="scene_edit_save_new">新しいシーンを保存</string>
+    <string name="scene_edit_watch_ad">広告を見て保存</string>
+    <string name="scene_edit_cancelled">保存をキャンセルしました</string>
+    <string name="scene_edit_ad_rejected">広告リワードが得られなかったため、保存をキャンセルしました</string>
+    <string name="scene_edit_saving">保存中</string>
+    <string name="scene_edit_success">保存しました</string>
+    <string name="scene_edit_failed">保存に失敗しました</string>
+    <string name="scene_edit_step1">ステップ1: 素材を選択</string>
+    <string name="scene_edit_step2">ステップ2: サウンドを選択</string>
+    <string name="scene_edit_step3">ステップ3: 粒子効果</string>
+    <string name="scene_edit_step4">ステップ4: プレビューして保存</string>
+    <string name="scene_edit_select_material">素材を選択</string>
+    <string name="scene_edit_select_sound">サウンドを選択</string>
+    <string name="scene_edit_particle_effect">粒子効果</string>
+    <string name="scene_edit_preview_save">プレビューして保存</string>
+    <string name="scene_edit_preview">シーン プレビュー</string>
+    <string name="scene_edit_pause_preview">プレビューを一時停止</string>
+    <string name="scene_edit_play_preview">プレビューを再生</string>
+    <string name="scene_edit_scene_info">シーン情報</string>
+    <string name="scene_edit_title_label">タイトル</string>
+    <string name="scene_edit_description">説明</string>
+    <string name="scene_edit_preset_material">プリセット素材</string>
+    <string name="scene_edit_local_image">端末の画像</string>
+    <string name="scene_edit_local_video">端末の動画</string>
+    <string name="scene_edit_pick_local_image">端末から画像を選択</string>
+    <string name="scene_edit_pick_local_video">端末から動画を選択</string>
+    <string name="scene_edit_pick_local_audio">端末から音声を選択</string>
+    <string name="scene_edit_loading_media">メディアライブラリを読み込み中</string>
+    <string name="scene_edit_no_material">利用可能な素材が見つかりません</string>
+    <string name="scene_edit_no_local_audio">端末の音声が見つかりません</string>
+    <string name="scene_edit_need_permission">メディアライブラリへのアクセス権限が必要です</string>
+    <string name="scene_edit_media_permission_title">メディアライブラリへのアクセスを要求</string>
+    <string name="scene_edit_media_permission_message">端末の画像や動画を読み取るためにメディアライブラリへのアクセスが必要です。許可しない場合もプリセット素材は使用できます。</string>
+    <string name="scene_edit_media_permission_allow">アクセスを許可</string>
+    <string name="scene_edit_no_particle">粒子効果が選択されていません</string>
+    <string name="scene_edit_reselect_sound">サウンドを再選択</string>
+    <string name="scene_edit_reselect_material">素材を再選択</string>
+    <string name="scene_edit_reselect_particle">粒子を再選択</string>
+    <string name="scene_edit_selected">選択済み</string>
+    <string name="scene_edit_click_to_select">タップして選択</string>
+    <string name="scene_edit_previewing">試聴中</string>
+    <string name="scene_edit_previewing_title">試聴中: %s</string>
+    <string name="scene_edit_click_to_preview">タップして試聴</string>
+    <string name="scene_edit_click_to_preview_title">タップして試聴: %s</string>
+    <string name="scene_edit_playing">再生中</string>
+    <string name="scene_edit_paused">一時停止中</string>
+    <string name="scene_edit_no_sound_selected">サウンドが選択されていません</string>
+    <string name="scene_edit_custom_scene">カスタムシーン</string>
+    <string name="scene_edit_enter_title">シーンのタイトルを入力してください</string>
+    <string name="scene_edit_enter_description">シーンの説明を入力してください</string>
+    <string name="scene_edit_title_placeholder">シーンのタイトルを入力</string>
+    <string name="scene_edit_description_placeholder">シーンの説明を入力</string>
+    <string name="scene_edit_current_image">現在の画像</string>
+    <string name="scene_edit_current_video">現在の動画</string>
+    <string name="scene_edit_read_media_failed">メディアライブラリの読み取りに失敗しました</string>
+    <string name="scene_edit_no_scene_found">シーンが見つかりません</string>
+    <string name="scene_edit_max_sound_limit">最大 %d 個のサウンド素材を選択できます</string>
+    <string name="scene_edit_ad_hint">新しいシーンを保存する前に短い広告をご覧ください...</string>
+    <string name="scene_edit_sounds">サウンド</string>
+    <string name="scene_edit_select_sound_prompt">サウンド素材を選択してください</string>
+    <string name="scene_edit_select_scene_sound">シーンのサウンドを選択</string>
+    <string name="scene_edit_select_scene_material">シーンの素材を選択</string>
+    <string name="scene_edit_param_intensity">強度</string>
+    <string name="scene_edit_param_wind">風力</string>
+    <string name="scene_edit_params_display">強度 %1$d%%  風力 %2$d%%</string>
+    <string name="scene_category_generic">シーン</string>
+    <string name="scene_category_title_format">%sシーン</string>
+
+    <!-- 场景控制 -->
+    <string name="scene_control_settings">画面設定</string>
+    <string name="scene_control_brightness">明るさ</string>
+    <string name="scene_control_dark">雰囲気</string>
+    <string name="scene_control_adjust_details">詳細を調整</string>
+    <string name="scene_control_sound">サウンド</string>
+    <string name="scene_control_countdown_clock">ページめくり時計</string>
+    <string name="scene_control_countdown_clock_desc">再生中にページめくり時計を表示</string>
+    <string name="clock_audio_label">時計</string>
+    <string name="scene_control_alarm_reminder">タイマー終了アラーム</string>
+    <string name="scene_control_alarm_reminder_desc">タイマー終了時に自動でベルを鳴らす</string>
+    <string name="scene_control_countdown_clock_position">ページめくり時計の位置</string>
+    <string name="scene_control_countdown_clock_position_center">中央</string>
+    <string name="scene_control_countdown_clock_position_top_left">左上</string>
+    <string name="scene_control_countdown_clock_position_bottom_left">左下</string>
+    <string name="scene_control_countdown_clock_position_top_right">右上</string>
+    <string name="scene_control_countdown_clock_position_bottom_right">右下</string>
+    <string name="scene_control_default_name">風雪の夜に帰る人</string>
+    <string name="scene_control_snow_sound">雪音</string>
+    <string name="scene_control_rain_sound">雨音</string>
+    <string name="scene_control_wind_sound">風音</string>
+    <string name="scene_control_atmosphere">雰囲気</string>
+
+    <!-- 设置页面 -->
+    <string name="settings_title">設定</string>
+    <string name="settings_playback">再生設定</string>
+    <string name="settings_playback_desc">デフォルト音量、タイマー、没入表示のオプション</string>
+    <string name="settings_theme">テーマ</string>
+    <string name="settings_theme_desc">全体の配色を選択、現在は %s</string>
+    <string name="settings_theme_dialog_desc">プリセットテーマはグローバルな強調色、カードの枠、高光効果を同期して変更します。切り替えはすぐに反映されます。</string>
+    <string name="settings_theme_gold">暖かみのあるゴールドブラウン</string>
+    <string name="settings_theme_gold_desc">柔らかく温かみのある金茶色の強調</string>
+    <string name="settings_theme_ocean">風鈴の青</string>
+    <string name="settings_theme_ocean_desc">透明感のある落ち着いた青、木の温もりも少し</string>
+    <string name="settings_theme_forest">霧の森の緑</string>
+    <string name="settings_theme_forest_desc">より柔らかく自然な緑の強調</string>
+    <string name="settings_theme_twilight">夕暮れの青紫</string>
+    <string name="settings_theme_twilight_desc">静かで夜のような冷たいトーンのテーマ</string>
+    <string name="settings_privacy">プライバシーと広告</string>
+    <string name="settings_privacy_desc">プライバシーポリシーと広告のプライバシーオプションを確認</string>
+    <string name="settings_about">%1$sについて</string>
+    <string name="settings_about_desc">バージョン情報とオープンソースライセンス</string>
+
+    <!-- 关于对话框 -->
+    <string name="about_tagline">集中と睡眠のための没入型シーン空間</string>
+    <string name="about_version">バージョン</string>
+    <string name="about_author">作者</string>
+    <string name="about_license">ライセンス</string>
+
+    <!-- 播放设置对话框 -->
+    <string name="playback_select_profile">デバイスの性能に合った再生プロファイルを選択</string>
+    <string name="playback_power_saver">省電力モード</string>
+    <string name="playback_power_saver_desc">リソース使用を抑え、低スペックまたは発熱しやすいデバイス向け</string>
+    <string name="playback_balanced">バランスモード</string>
+    <string name="playback_balanced_desc">パフォーマンスと体験のバランス（デフォルト）</string>
+    <string name="playback_quality">高画質モード</string>
+    <string name="playback_quality_desc">よりリッチな再生体験を保持、高スペックデバイス向け</string>
+
+    <!-- 隐私对话框 -->
+    <string name="privacy_no_collect">このアプリはユーザーの個人情報を積極的に収集、アップロード、販売しません。</string>
+    <string name="privacy_google_ads">このアプリはGoogle広告サービスを統合しています。Google広告SDKは、Googleのポリシーに従い、デバイス識別子、広告ID、おおよその位置情報、広告インタラクションなどのデータを広告配信、頻度制御、不正防止、効果測定のために処理する場合があります。</string>
+    <string name="privacy_consent_management">お住まいの地域で広告同意管理が求められる場合、このアプリはGoogleの同意管理フォームを使用して広告のプライバシーオプションを処理します。</string>
+    <string name="privacy_consent_status">同意状態: %s</string>
+    <string name="privacy_manage_options">広告のプライバシーオプションを管理</string>
+
+    <!-- 声音相关 -->
+    <string name="sound_nature">自然</string>
+    <string name="sound_healing">ヒーリング</string>
+    <string name="sound_focus">集中</string>
+    <string name="sound_sleep">睡眠</string>
+    <string name="sound_reading">読書</string>
+
+    <!-- 步骤指示器 -->
+    <string name="step_add_scene">シーンを追加</string>
+    <string name="step1_title">ステップ1: 素材を選択</string>
+
+    <!-- Tab 标签 -->
+    <string name="tab_focus_scene">集中シーン</string>
+    <string name="tab_sleep_scene">睡眠シーン</string>
+
+    <!-- 收藏 -->
+    <string name="favorite_scene">お気に入りシーン</string>
+    <string name="favorite">お気に入り</string>
+
+    <!-- 提示信息 -->
+    <string name="hint_swipe_up">スワイプアップで編集を開く</string>
+    <string name="scene_guide_logo_title">シーンリスト</string>
+    <string name="scene_guide_logo_desc">ここからシーンリストを開き、他のプリセットやカスタムシーンに素早く切り替えられます。</string>
+    <string name="scene_guide_player_title">再生コントロール</string>
+    <string name="scene_guide_player_desc">現在のシーンの再生・一時停止を担当し、音量も調整できます。</string>
+    <string name="scene_guide_scene_swipe_title">シーン切り替え</string>
+    <string name="scene_guide_scene_swipe_desc">画面を左右にスワイプすると、前のシーンや次のシーンに切り替えられます。</string>
+    <string name="scene_guide_swipe_title">スワイプアップパネル</string>
+    <string name="scene_guide_swipe_desc">ここからスワイプアップすると、詳細・タイマー・粒子・サウンドの調整パネルを開けます。</string>
+    <string name="scene_guide_timer_title">タイマー終了</string>
+    <string name="scene_guide_timer_desc">ここでタイマー終了のカウントダウン時間を設定できます。</string>
+    <string name="scene_sound_video_volume">ビデオ</string>
+
+    <!-- 同步 -->
+    <string name="sync_data">データを同期中…</string>
+
+    <!-- 种子数据 - 场景 -->
+    <string name="seed_scene_wind_chime_title">夏の風鈴</string>
+    <string name="seed_scene_wind_chime_subtitle">清風が吹き、夏の気配が満ちる</string>
+    <string name="seed_scene_after_rain_title">雨後の長街</string>
+    <string name="seed_scene_after_rain_subtitle">雨に潤う青い階段、山霧が街を隠す</string>
+    <string name="seed_scene_rainy_cafe_title">湖畔のコーヒー屋</string>
+    <string name="seed_scene_rainy_cafe_subtitle">一つの窓に煙雨、半盞の安らぎ</string>
+    <string name="seed_scene_city_snow_title">都市の寒い夜</string>
+    <string name="seed_scene_city_snow_subtitle">銀霜が屋根を覆い、灯火が長く灯る</string>
+    <string name="seed_scene_book_room_title">雪の夜の書斎</string>
+    <string name="seed_scene_book_room_subtitle">灯火が巻物を照らし、遠くから城の雪を見る</string>
+    <string name="seed_scene_fireplace_snow_title">林間の雪の家</string>
+    <string name="seed_scene_fireplace_snow_subtitle">暖炉で枕を温め、静かに雪の音を聞く</string>
+    <string name="seed_scene_under_moon_title">月下の静かな湖</string>
+    <string name="seed_scene_under_moon_subtitle">一輪の寒月、半湖の清らかな光</string>
+    <string name="seed_scene_stormy_bedroom_title">雨宿りの高楼</string>
+    <string name="seed_scene_stormy_bedroom_subtitle">炉火とともに眠り、一室の昏い光</string>
+    <string name="seed_scene_snow_night_title">風雪の夜に帰る人</string>
+    <string name="seed_scene_snow_night_subtitle">月が平湖に落ち、風雪が庐に帰る</string>
+    <string name="seed_scene_train_night_title">旅の夜の車内</string>
+    <string name="seed_scene_train_night_subtitle">列車が夜を貫き、書物が同行する</string>
+
+    <!-- 种子数据 - 噪音 -->
+    <string name="seed_noise_rain_title">雨音</string>
+    <string name="seed_noise_rain_description">細かい雨粒が絶え間なく落ち、読書、ぼんやり、ゆったりした作業に適する</string>
+    <string name="seed_noise_rain_heavy_title">豪雨</string>
+    <string name="seed_noise_rain_heavy_description">より厚い雨のカーテンが空間を包み、没入感が強く雑音を遮断しやすい</string>
+    <string name="seed_noise_fireplace_title">炉火</string>
+    <string name="seed_noise_fireplace_description">薪がゆっくり燃えるパチパチという音が、画面に安定した温もりを加える</string>
+    <string name="seed_noise_wind_title">風の音</string>
+    <string name="seed_noise_wind_description">遠くから林の隙間を抜ける風、存在感は薄いが空間を広げる</string>
+    <string name="seed_noise_ocean_title">波の音</string>
+    <string name="seed_noise_ocean_description">潮が波打って近づき引く、ゆったりしたリズムで心を空にするのに適する</string>
+    <string name="seed_noise_piano_title">ピアノ</string>
+    <string name="seed_noise_piano_description">低飽和のピアノの線が背景を飾るだけで、注意を奪わない</string>
+    <string name="seed_noise_thunder_title">雷の音</string>
+    <string name="seed_noise_thunder_description">遠くで時折転がる雷が、夜に少し階層を加える</string>
+    <string name="seed_noise_thunder_and_rain_title">雷雨</string>
+    <string name="seed_noise_thunder_and_rain_description">雷と雨のカーテンが重なり、全体の雰囲気がより閉ざされ、静かになる</string>
+    <string name="seed_noise_seagull_title">カモメ</string>
+    <string name="seed_noise_seagull_description">海面に開放感を残し、時折カモメの声が飛ぶが、密集しすぎない</string>
+    <string name="seed_noise_river_title">川の音</string>
+    <string name="seed_noise_river_description">水が石面に沿って進む、均一な周波数で長時間寄り添うのに適する</string>
+    <string name="seed_noise_insects_title">虫の音</string>
+    <string name="seed_noise_insects_description">薄く連続した虫の音が、シーンをより静かな夜の質感へ導く</string>
+    <string name="seed_noise_wind_chime_title">風鈴</string>
+    <string name="seed_noise_wind_chime_description">鈴の音は頻繁に現れず、白を多く残し、装飾音部として適する</string>
+    <string name="seed_noise_page_turn_title">ページをめくる音</string>
+    <string name="seed_noise_page_turn_description">ページをめくる音は軽く短く、書斎や読書シーンと一緒に使うのに適する</string>
+    <string name="seed_noise_flip_clock_title">ページめくり時計</string>
+    <string name="seed_noise_flip_clock_description">機械的なページめくり音が一定のリズムで繰り返され、時間感覚が必要な集中シーンに適する</string>
+    <string name="seed_noise_typing_title">タイピング</string>
+    <string name="seed_noise_typing_description">キー入力のフィードバックは明確だが周波数帯は控えめ、ワークスペースの雰囲気に適する</string>
+    <string name="seed_noise_writing_title">書き物</string>
+    <string name="seed_noise_writing_description">ペン先と紙の摩擦感は軽く、低存在感の寄り添いに適する</string>
+    <string name="seed_noise_train_title">列車</string>
+    <string name="seed_noise_train_description">継続的で単調な走行音、夜間のリラックスや就寝に非常に適する</string>
+
+    <!-- 种子数据 - 粒子效果 -->
+    <string name="seed_particle_light_rain_title">小雨</string>
+    <string name="seed_particle_light_rain_description">薄い雨の線だけを残し、比較的静かな室内シーンに適する</string>
+    <string name="seed_particle_moderate_rain_title">中雨</string>
+    <string name="seed_particle_moderate_rain_description">雨量は適度で存在感がありながらも主体の画面を圧倒しない</string>
+    <string name="seed_particle_heavy_rain_title">豪雨</string>
+    <string name="seed_particle_heavy_rain_description">画面がより密集・近く感じられ、包み込むような雨の夜の雰囲気に適する</string>
+    <string name="seed_particle_light_snow_title">小雪</string>
+    <string name="seed_particle_light_snow_description">雪量はごく少なく、主に画面に冬の気配を加えるために使う</string>
+    <string name="seed_particle_moderate_snow_title">中雪</string>
+    <string name="seed_particle_moderate_snow_description">雪面がより完全で、屋外や夜景系の冬のシーンに適する</string>
+    <string name="seed_particle_blizzard_title">吹雪</string>
+    <string name="seed_particle_blizzard_description">風向きと雪量がより強く、より閉ざされ冷たい空間の気質に適する</string>
+    <string name="seed_particle_no_particle_title">効果なし</string>
+    <string name="seed_particle_no_particle_description">純粋な背景、粒子効果なし</string>
+    <string name="seed_particle_fireflies_title">ホタル</string>
+    <string name="seed_particle_fireflies_description">散らばった暖かい光が暗がりをゆっくり移動、夜の湖や林間のシーンに適する</string>
+
+</resources>

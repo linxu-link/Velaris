@@ -1,0 +1,22 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="scene_edit_custom_scene">自訂場景</string>
+    <string name="scene_edit_record_audio_permission_title">啟用即時波形</string>
+    <string name="scene_edit_record_audio_permission_message">我們需要錄音權限來繪製即時音訊波形。你也可以選擇不授權，應用仍可正常使用，只是波形會以靜態動畫展示。</string>
+    <string name="scene_edit_record_audio_permission_allow">允許並繼續</string>
+    <string name="scene_edit_record_audio_permission_decline">暫不允許</string>
+</resources>

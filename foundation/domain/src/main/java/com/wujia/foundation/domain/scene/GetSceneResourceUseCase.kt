@@ -1,0 +1,28 @@
+/*
+ * Copyright 2026 WuJia(Linxu_Link)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.wujia.foundation.domain.scene
+
+import com.wujia.foundation.model.scene.SceneResourceRepository
+import javax.inject.Inject
+
+/**
+ * 根据 ID 获取单个场景资源。
+ *
+ * 供播放页、详情态等需要精确读取场景内容的地方使用。
+ */
+class GetSceneResourceUseCase @Inject constructor(private val sceneResourceRepository: SceneResourceRepository) {
+    suspend operator fun invoke(id: String) = sceneResourceRepository.getSceneResource(id)
+}

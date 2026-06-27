@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "888533868765",
+    "project_id": "com-wujia-velaris",
+    "storage_bucket": "com-wujia-velaris.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888533868765:android:70a65edd40b82eaa613b34",
+        "android_client_info": {
+          "package_name": "com.wujia.velaris.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Q7dMyuHEA41l6TVjcLObiP7LLivv_JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888533868765:android:c8b257152b22cdfc613b34",
+        "android_client_info": {
+          "package_name": "com.wujia.velaris.release"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Q7dMyuHEA41l6TVjcLObiP7LLivv_JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

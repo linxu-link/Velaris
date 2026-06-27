@@ -1,0 +1,22 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="scene_edit_custom_scene">Custom Scene</string>
+    <string name="scene_edit_record_audio_permission_title">Enable Real-time Waveform</string>
+    <string name="scene_edit_record_audio_permission_message">We need microphone permission to draw real-time audio waveforms. You can also choose not to grant it; the app will still work normally, but the waveform will be shown as a static animation.</string>
+    <string name="scene_edit_record_audio_permission_allow">Allow and Continue</string>
+    <string name="scene_edit_record_audio_permission_decline">Not Now</string>
+</resources>

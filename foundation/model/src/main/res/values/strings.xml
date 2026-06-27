@@ -1,0 +1,33 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <!-- 粒子效果类型 -->
+    <string name="particle_effect_none">无</string>
+    <string name="particle_effect_rain">下雨</string>
+    <string name="particle_effect_snow">下雪</string>
+    <string name="particle_effect_fireflies">萤火虫</string>
+
+    <!-- 粒子效果分类 -->
+    <string name="particle_category_rain">雨天</string>
+    <string name="particle_category_snow">雪天</string>
+    <string name="particle_category_calm">静谧</string>
+    <string name="particle_category_storm">风暴</string>
+
+    <!-- 粒子效果质量 -->
+    <string name="particle_quality_low">低</string>
+    <string name="particle_quality_medium">中</string>
+    <string name="particle_quality_high">高</string>
+</resources>

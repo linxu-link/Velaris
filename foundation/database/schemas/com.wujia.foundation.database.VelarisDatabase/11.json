@@ -1,0 +1,290 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 11,
+    "identityHash": "2cf9a94e0cd63704141992f5392a2e85",
+    "entities": [
+      {
+        "tableName": "scenes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `category` TEXT NOT NULL, `iconName` TEXT NOT NULL, `accentColor` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, `videoUri` TEXT, `backgroundResName` TEXT, `backgroundUri` TEXT, `brightness` REAL NOT NULL DEFAULT 0.5, `darkness` REAL NOT NULL DEFAULT 0.1, `timerDurationMillis` INTEGER NOT NULL DEFAULT 2700000, `fadeOutEnabled` INTEGER NOT NULL DEFAULT 1, `guideCompleted` INTEGER NOT NULL DEFAULT 0, `showCountdownClock` INTEGER NOT NULL DEFAULT 1, `alarmReminderEnabled` INTEGER NOT NULL DEFAULT 0, `countdownClockPosition` TEXT NOT NULL DEFAULT 'Center', `particleEffect` TEXT NOT NULL DEFAULT 'None', `particleIntensity` REAL NOT NULL DEFAULT 0.72, `particleWind` REAL NOT NULL DEFAULT 0.2, `particleQuality` TEXT NOT NULL DEFAULT 'Medium', `particleForegroundGlassEnabled` INTEGER NOT NULL DEFAULT 1, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iconName",
+            "columnName": "iconName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accentColor",
+            "columnName": "accentColor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "videoUri",
+            "columnName": "videoUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "backgroundResName",
+            "columnName": "backgroundResName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "backgroundUri",
+            "columnName": "backgroundUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "brightness",
+            "columnName": "brightness",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.5"
+          },
+          {
+            "fieldPath": "darkness",
+            "columnName": "darkness",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.1"
+          },
+          {
+            "fieldPath": "timerDurationMillis",
+            "columnName": "timerDurationMillis",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "2700000"
+          },
+          {
+            "fieldPath": "fadeOutEnabled",
+            "columnName": "fadeOutEnabled",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "guideCompleted",
+            "columnName": "guideCompleted",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "showCountdownClock",
+            "columnName": "showCountdownClock",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "alarmReminderEnabled",
+            "columnName": "alarmReminderEnabled",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "countdownClockPosition",
+            "columnName": "countdownClockPosition",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'Center'"
+          },
+          {
+            "fieldPath": "particleEffect",
+            "columnName": "particleEffect",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'None'"
+          },
+          {
+            "fieldPath": "particleIntensity",
+            "columnName": "particleIntensity",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.72"
+          },
+          {
+            "fieldPath": "particleWind",
+            "columnName": "particleWind",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.2"
+          },
+          {
+            "fieldPath": "particleQuality",
+            "columnName": "particleQuality",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'Medium'"
+          },
+          {
+            "fieldPath": "particleForegroundGlassEnabled",
+            "columnName": "particleForegroundGlassEnabled",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_scenes_category_sortOrder",
+            "unique": false,
+            "columnNames": [
+              "category",
+              "sortOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_scenes_category_sortOrder` ON `${TABLE_NAME}` (`category`, `sortOrder`)"
+          },
+          {
+            "name": "index_scenes_sortOrder",
+            "unique": false,
+            "columnNames": [
+              "sortOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_scenes_sortOrder` ON `${TABLE_NAME}` (`sortOrder`)"
+          }
+        ]
+      },
+      {
+        "tableName": "scene_audio_tracks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`audioId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sceneId` TEXT NOT NULL, `dataId` TEXT NOT NULL, `title` TEXT NOT NULL, `uri` TEXT NOT NULL, `volume` REAL NOT NULL, `loop` INTEGER NOT NULL, `sortOrder` INTEGER NOT NULL, FOREIGN KEY(`sceneId`) REFERENCES `scenes`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "audioId",
+            "columnName": "audioId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sceneId",
+            "columnName": "sceneId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataId",
+            "columnName": "dataId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uri",
+            "columnName": "uri",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "volume",
+            "columnName": "volume",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loop",
+            "columnName": "loop",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "audioId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_scene_audio_tracks_sceneId",
+            "unique": false,
+            "columnNames": [
+              "sceneId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_scene_audio_tracks_sceneId` ON `${TABLE_NAME}` (`sceneId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "scenes",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sceneId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2cf9a94e0cd63704141992f5392a2e85')"
+    ]
+  }
+}

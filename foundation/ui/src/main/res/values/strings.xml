@@ -1,0 +1,340 @@
+<!--
+  ~ Copyright 2026 WuJia(Linxu_Link)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <!-- 应用信息 -->
+    <string name="app_name">氛围时钟</string>
+    <string name="app_tagline">在喧嚣中，寻一盏静光</string>
+
+    <!-- 通用操作 -->
+    <string name="common_cancel">取消</string>
+    <string name="common_confirm">确定</string>
+    <string name="common_close">关闭</string>
+    <string name="common_back">返回</string>
+    <string name="common_save">保存</string>
+    <string name="common_next">下一步</string>
+    <string name="common_settings">设置</string>
+    <string name="common_add">添加</string>
+    <string name="common_delete">删除</string>
+    <string name="common_play">播放</string>
+    <string name="common_pause">暂停</string>
+    <string name="common_stop">停止</string>
+
+    <!-- 粒子效果相关 -->
+    <string name="particle_none">无</string>
+    <string name="particle_rain">雨</string>
+    <string name="particle_snow">雪</string>
+    <string name="particle_fireflies">萤火虫</string>
+    <string name="particle_quality_low">低</string>
+    <string name="particle_quality_medium">中</string>
+    <string name="particle_quality_high">高</string>
+    <string name="particle_quality_ultra">超高</string>
+    <string name="particle_effect">粒子效果</string>
+    <string name="particle_property">粒子属性</string>
+    <string name="particle_quality">质量</string>
+    <string name="particle_foreground_streak">前景水痕</string>
+    <string name="particle_rain_on_glass">玻璃上的雨水效果</string>
+    <string name="particle_intensity">强度</string>
+    <string name="particle_wind">风力</string>
+    <string name="particle_effect_display">粒子效果</string>
+
+    <!-- 播放器相关 -->
+    <string name="player_mix">混音</string>
+    <string name="player_sound">声音</string>
+    <string name="player_wind">风声</string>
+    <string name="player_rain">雨声</string>
+    <string name="player_snow">雪声</string>
+    <string name="player_wind_snow_fireplace">风声 · 雪落声 · 壁炉声</string>
+    <string name="sound_settings">声音设置</string>
+
+    <!-- 定时器相关 -->
+    <string name="timer_close">定时关闭</string>
+    <string name="timer_smart_fade">智能淡出</string>
+    <string name="timer_smart_fade_desc">在结束前3–5分钟内音量逐渐降低</string>
+    <string name="timer_15min">15分钟</string>
+    <string name="timer_25min">25分钟</string>
+    <string name="timer_45min">45分钟</string>
+    <string name="timer_custom">自定义</string>
+    <string name="timer_custom_time">自定义时间</string>
+    <string name="timer_clock">时钟</string>
+    <string name="timer_hour">时</string>
+    <string name="timer_minute">分</string>
+    <string name="timer_label">定时</string>
+    <string name="timer_remaining">剩余 %d%%</string>
+    <string name="timer_stopped">已停止</string>
+    <string name="alarm_reminder_title">闹钟提醒</string>
+    <string name="alarm_reminder_desc">倒计时已经结束，点击确定关闭闹钟。</string>
+    <string name="alarm_reminder_confirm">确定</string>
+
+    <!-- 场景列表 -->
+    <string name="scene_list_title">场景列表</string>
+    <string name="scene_list_drag_hint">长按拖拽调整顺序</string>
+    <string name="scene_list_drag_guide_title">长按拖拽</string>
+    <string name="scene_list_drag_guide_desc">长按场景卡片并拖动，可以调整场景顺序。</string>
+    <string name="scene_list_preset_not_deletable">预制场景不可删除</string>
+    <string name="scene_list_delete_scene">删除场景</string>
+    <string name="scene_list_add_scene">添加场景</string>
+
+    <!-- 场景编辑 -->
+    <string name="scene_edit_title">编辑场景</string>
+    <string name="scene_edit_save">保存</string>
+    <string name="scene_edit_save_new">保存新场景</string>
+    <string name="scene_edit_watch_ad">观看并保存</string>
+    <string name="scene_edit_cancelled">已取消保存</string>
+    <string name="scene_edit_ad_rejected">未获得广告奖励，已取消保存</string>
+    <string name="scene_edit_saving">保存中</string>
+    <string name="scene_edit_success">保存成功</string>
+    <string name="scene_edit_failed">保存失败</string>
+    <string name="scene_edit_step1">第一步：选择素材</string>
+    <string name="scene_edit_step2">第二步：选择声音</string>
+    <string name="scene_edit_step3">第三步：粒子效果</string>
+    <string name="scene_edit_step4">第四步：预览保存</string>
+    <string name="scene_edit_select_material">选择素材</string>
+    <string name="scene_edit_select_sound">选择声音</string>
+    <string name="scene_edit_particle_effect">粒子效果</string>
+    <string name="scene_edit_preview_save">预览保存</string>
+    <string name="scene_edit_preview">场景预览</string>
+    <string name="scene_edit_pause_preview">暂停预览</string>
+    <string name="scene_edit_play_preview">预览播放</string>
+    <string name="scene_edit_scene_info">场景信息</string>
+    <string name="scene_edit_title_label">标题</string>
+    <string name="scene_edit_description">描述</string>
+    <string name="scene_edit_preset_material">预制素材</string>
+    <string name="scene_edit_local_image">本机图片</string>
+    <string name="scene_edit_local_video">本机视频</string>
+    <string name="scene_edit_pick_local_image">从设备选择图片</string>
+    <string name="scene_edit_pick_local_video">从设备选择视频</string>
+    <string name="scene_edit_pick_local_audio">从设备选择音频</string>
+    <string name="scene_edit_loading_media">正在读取媒体库</string>
+    <string name="scene_edit_no_material">没有找到可用素材</string>
+    <string name="scene_edit_no_local_audio">没有找到本机音频</string>
+    <string name="scene_edit_need_permission">需要授权访问媒体库</string>
+    <string name="scene_edit_media_permission_title">申请媒体库权限</string>
+    <string name="scene_edit_media_permission_message">需要访问媒体库以读取本机图片和视频，授权后才能显示本机素材。拒绝后仍可继续使用预制素材。</string>
+    <string name="scene_edit_media_permission_allow">允许访问</string>
+    <string name="scene_edit_no_particle">未选择粒子效果</string>
+    <string name="scene_edit_reselect_sound">重选声音</string>
+    <string name="scene_edit_reselect_material">重选素材</string>
+    <string name="scene_edit_reselect_particle">重选粒子</string>
+    <string name="scene_edit_selected">已选中</string>
+    <string name="scene_edit_click_to_select">点击选择</string>
+    <string name="scene_edit_previewing">正在试听</string>
+    <string name="scene_edit_previewing_title">正在试听：%s</string>
+    <string name="scene_edit_click_to_preview">点击试听</string>
+    <string name="scene_edit_click_to_preview_title">点击试听：%s</string>
+    <string name="scene_edit_playing">播放中</string>
+    <string name="scene_edit_paused">已暂停</string>
+    <string name="scene_edit_no_sound_selected">未选择声音</string>
+    <string name="scene_edit_custom_scene">自定义场景</string>
+    <string name="scene_edit_enter_title">请输入场景标题</string>
+    <string name="scene_edit_enter_description">请输入场景描述</string>
+    <string name="scene_edit_title_placeholder">输入场景标题</string>
+    <string name="scene_edit_description_placeholder">输入场景描述</string>
+    <string name="scene_edit_current_image">当前图片</string>
+    <string name="scene_edit_current_video">当前视频</string>
+    <string name="scene_edit_read_media_failed">读取媒体库失败</string>
+    <string name="scene_edit_no_scene_found">未找到场景</string>
+    <string name="scene_edit_max_sound_limit">最多选择%d个声音素材</string>
+    <string name="scene_edit_ad_hint">保存新场景前需要观看一段广告...</string>
+    <string name="scene_edit_sounds">声音</string>
+    <string name="scene_edit_select_sound_prompt">请选择声音素材</string>
+    <string name="scene_edit_select_scene_sound">请选择场景声音</string>
+    <string name="scene_edit_select_scene_material">请选择场景素材</string>
+    <string name="scene_edit_param_intensity">强度</string>
+    <string name="scene_edit_param_wind">风力</string>
+    <string name="scene_edit_params_display">强度 %1$d%%  风力 %2$d%%</string>
+    <string name="scene_category_generic">场景</string>
+    <string name="scene_category_title_format">%s场景</string>
+
+    <!-- 场景控制 -->
+    <string name="scene_control_settings">画面设置</string>
+    <string name="scene_control_brightness">亮度</string>
+    <string name="scene_control_dark">氛围</string>
+    <string name="scene_control_adjust_details">调整细节</string>
+    <string name="scene_control_sound">声音</string>
+    <string name="scene_control_countdown_clock">翻页时钟</string>
+    <string name="scene_control_countdown_clock_desc">在界面播放时显示翻页时钟</string>
+    <string name="clock_audio_label">时钟</string>
+    <string name="scene_control_alarm_reminder">倒计时闹钟提醒</string>
+    <string name="scene_control_alarm_reminder_desc">倒计时结束后自动响铃提醒</string>
+    <string name="scene_control_countdown_clock_position">翻页时钟显示位置</string>
+    <string name="scene_control_countdown_clock_position_center">居中</string>
+    <string name="scene_control_countdown_clock_position_top_left">左上</string>
+    <string name="scene_control_countdown_clock_position_bottom_left">左下</string>
+    <string name="scene_control_countdown_clock_position_top_right">右上</string>
+    <string name="scene_control_countdown_clock_position_bottom_right">右下</string>
+    <string name="scene_control_default_name">风雪夜归人</string>
+    <string name="scene_control_snow_sound">雪声</string>
+    <string name="scene_control_rain_sound">雨声</string>
+    <string name="scene_control_wind_sound">风声</string>
+    <string name="scene_control_atmosphere">氛围</string>
+
+    <!-- 设置页面 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_playback">播放设置</string>
+    <string name="settings_playback_desc">默认音量、计时和沉浸显示选项</string>
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_desc">选择界面整体配色，当前为 %s</string>
+    <string name="settings_theme_dialog_desc">预设主题会同步修改全局强调色、卡片边框和高光效果，切换后立即生效。</string>
+    <string name="settings_theme_gold">暖金棕</string>
+    <string name="settings_theme_gold_desc">柔和温暖的金棕色强调</string>
+    <string name="settings_theme_ocean">风铃青</string>
+    <string name="settings_theme_ocean_desc">清透冷静，带一点木质暖意</string>
+    <string name="settings_theme_forest">雾林绿</string>
+    <string name="settings_theme_forest_desc">更柔和自然的绿色强调</string>
+    <string name="settings_theme_twilight">暮蓝紫</string>
+    <string name="settings_theme_twilight_desc">安静、偏夜色的冷调主题</string>
+    <string name="settings_privacy">隐私与广告</string>
+    <string name="settings_privacy_desc">查看隐私政策和广告隐私选项</string>
+    <string name="settings_about">关于 %1$s</string>
+    <string name="settings_about_desc">版本信息和开源许可</string>
+
+    <!-- 关于对话框 -->
+    <string name="about_tagline">为专注与助眠打造的沉浸场景空间</string>
+    <string name="about_version">版本</string>
+    <string name="about_author">作者</string>
+    <string name="about_license">许可证</string>
+
+    <!-- 播放设置对话框 -->
+    <string name="playback_select_profile">选择适合设备性能的播放档位</string>
+    <string name="playback_power_saver">省电模式</string>
+    <string name="playback_power_saver_desc">降低资源占用，适合低端或发热设备</string>
+    <string name="playback_balanced">均衡模式</string>
+    <string name="playback_balanced_desc">平衡性能和体验（默认）</string>
+    <string name="playback_quality">画质模式</string>
+    <string name="playback_quality_desc">保留更丰富的播放体验，适合高端设备</string>
+
+    <!-- 隐私对话框 -->
+    <string name="privacy_no_collect">本应用不会主动收集、上传或出售用户个人信息。</string>
+    <string name="privacy_google_ads">本应用集成了 Google 广告服务。Google 广告 SDK 可能会根据 Google 自身政策处理设备标识符、广告标识符、大致位置、广告互动等数据，用于广告投放、频次控制、反欺诈和效果衡量。</string>
+    <string name="privacy_consent_management">如果您的地区要求广告同意管理，本应用会使用 Google 的同意管理表单来处理广告隐私选项。</string>
+    <string name="privacy_consent_status">同意状态: %s</string>
+    <string name="privacy_manage_options">管理广告隐私选项</string>
+
+    <!-- 声音相关 -->
+    <string name="sound_nature">自然</string>
+    <string name="sound_healing">治愈</string>
+    <string name="sound_focus">专注</string>
+    <string name="sound_sleep">助眠</string>
+    <string name="sound_reading">阅读</string>
+
+    <!-- 步骤指示器 -->
+    <string name="step_add_scene">添加场景</string>
+    <string name="step1_title">第一步：选择素材</string>
+
+    <!-- Tab 标签 -->
+    <string name="tab_focus_scene">专注场景</string>
+    <string name="tab_sleep_scene">助眠场景</string>
+
+    <!-- 收藏 -->
+    <string name="favorite_scene">收藏场景</string>
+    <string name="favorite">收藏</string>
+
+    <!-- 提示信息 -->
+    <string name="hint_swipe_up">上滑打开编辑</string>
+    <string name="scene_guide_logo_title">场景列表</string>
+    <string name="scene_guide_logo_desc">这里可以打开场景列表，快速切换到其他预设或自定义场景。</string>
+    <string name="scene_guide_player_title">播放控制</string>
+    <string name="scene_guide_player_desc">这里负责播放和暂停当前场景，也可以调整音量。</string>
+    <string name="scene_guide_scene_swipe_title">切换场景</string>
+    <string name="scene_guide_scene_swipe_desc">在屏幕左右滑动，可以切换到上一个或下一个场景。</string>
+    <string name="scene_guide_swipe_title">上滑面板</string>
+    <string name="scene_guide_swipe_desc">从这里上滑，可以打开调整细节、定时、粒子和声音的控制面板。</string>
+    <string name="scene_guide_timer_title">定时关闭</string>
+    <string name="scene_guide_timer_desc">这里可以设置定时关闭的倒计时时间。</string>
+    <string name="scene_sound_video_volume">视频</string>
+
+    <!-- 同步 -->
+    <string name="sync_data">正在同步数据…</string>
+
+    <!-- 种子数据 - 场景 -->
+    <string name="seed_scene_wind_chime_title">夏 日 风 铃</string>
+    <string name="seed_scene_wind_chime_subtitle">清风拂拂，夏意盎然</string>
+    <string name="seed_scene_after_rain_title">雨 后 长 街</string>
+    <string name="seed_scene_after_rain_subtitle">雨润青阶，山雾藏街</string>
+    <string name="seed_scene_rainy_cafe_title">湖 畔 咖 啡 屋</string>
+    <string name="seed_scene_rainy_cafe_subtitle">一窗烟雨，半盏安然</string>
+    <string name="seed_scene_city_snow_title">都 市 寒 夜</string>
+    <string name="seed_scene_city_snow_subtitle">银霜覆顶，灯火长明</string>
+    <string name="seed_scene_book_room_title">雪 夜 书 斋</string>
+    <string name="seed_scene_book_room_subtitle">烛灯伴卷，远观城雪</string>
+    <string name="seed_scene_fireplace_snow_title">林 间 雪 舍</string>
+    <string name="seed_scene_fireplace_snow_subtitle">暖炉安枕，静听落雪</string>
+    <string name="seed_scene_under_moon_title">月 下 静 湖</string>
+    <string name="seed_scene_under_moon_subtitle">一轮寒月，半湖清辉</string>
+    <string name="seed_scene_stormy_bedroom_title">雨 宿 高 楼</string>
+    <string name="seed_scene_stormy_bedroom_subtitle">炉火伴眠，一室昏光</string>
+    <string name="seed_scene_snow_night_title">风 雪 夜 归 人</string>
+    <string name="seed_scene_snow_night_subtitle">月落平湖，风雪归庐</string>
+    <string name="seed_scene_train_night_title">旅 夜 车 厢</string>
+    <string name="seed_scene_train_night_subtitle">列车穿夜，书卷随行</string>
+
+
+    <!-- 种子数据 - 噪音 -->
+    <string name="seed_noise_rain_title">雨声</string>
+    <string name="seed_noise_rain_description">细密雨点持续落下，适合阅读、发呆和慢节奏工作</string>
+    <string name="seed_noise_rain_heavy_title">暴雨</string>
+    <string name="seed_noise_rain_heavy_description">更厚的雨幕把空间包住，环境感更强，也更容易隔绝杂音</string>
+    <string name="seed_noise_fireplace_title">炉火</string>
+    <string name="seed_noise_fireplace_description">木柴缓慢燃烧的噼啪声，让画面多一点稳定的暖意</string>
+    <string name="seed_noise_wind_title">风声</string>
+    <string name="seed_noise_wind_description">风从远处穿过林隙，存在感轻，但能把空间拉开</string>
+    <string name="seed_noise_ocean_title">海浪</string>
+    <string name="seed_noise_ocean_description">潮水一层层推近又退开，节奏宽松，适合放空</string>
+    <string name="seed_noise_piano_title">钢琴</string>
+    <string name="seed_noise_piano_description">低饱和的钢琴线条只做铺底，不抢注意力</string>
+    <string name="seed_noise_thunder_title">雷声</string>
+    <string name="seed_noise_thunder_description">远处雷声偶尔滚过，给夜色加一点层次</string>
+    <string name="seed_noise_thunder_and_rain_title">雷雨</string>
+    <string name="seed_noise_thunder_and_rain_description">雷声和雨幕叠在一起，整体氛围更封闭、更沉静</string>
+    <string name="seed_noise_seagull_title">海鸥</string>
+    <string name="seed_noise_seagull_description">海面留有开阔感，间或掠过几声海鸥，不会太密</string>
+    <string name="seed_noise_river_title">河流</string>
+    <string name="seed_noise_river_description">流水贴着石面往前走，频率均匀，适合长时间陪伴</string>
+    <string name="seed_noise_insects_title">虫鸣</string>
+    <string name="seed_noise_insects_description">虫鸣薄而连续，能把场景推向更安静的夜晚质感</string>
+    <string name="seed_noise_wind_chime_title">风铃</string>
+    <string name="seed_noise_wind_chime_description">铃音出现得不频繁，留白更多，适合作为点缀声部</string>
+    <string name="seed_noise_page_turn_title">翻书</string>
+    <string name="seed_noise_page_turn_description">翻页声轻且短，适合和书房、阅读类场景一起使用</string>
+    <string name="seed_noise_flip_clock_title">翻页时钟</string>
+    <string name="seed_noise_flip_clock_description">机械翻页声按固定节拍重复，适合需要时间感的专注场景</string>
+    <string name="seed_noise_typing_title">打字</string>
+    <string name="seed_noise_typing_description">键击反馈明确，但频段克制，适合工作台氛围</string>
+    <string name="seed_noise_writing_title">写字</string>
+    <string name="seed_noise_writing_description">笔尖与纸面的摩擦感很轻，适合低存在感陪伴</string>
+    <string name="seed_noise_train_title">列车</string>
+    <string name="seed_noise_train_description">持续而单调的行进声，很适合夜间放松或入睡</string>
+
+
+    <!-- 种子数据 - 粒子效果 -->
+    <string name="seed_particle_light_rain_title">细雨</string>
+    <string name="seed_particle_light_rain_description">只保留轻薄雨线，适合偏安静的室内场景</string>
+    <string name="seed_particle_moderate_rain_title">中雨</string>
+    <string name="seed_particle_moderate_rain_description">雨量适中，既有存在感，又不会压住主体画面</string>
+    <string name="seed_particle_heavy_rain_title">暴雨</string>
+    <string name="seed_particle_heavy_rain_description">画面会更密、更近，适合需要包裹感的雨夜氛围</string>
+    <string name="seed_particle_light_snow_title">小雪</string>
+    <string name="seed_particle_light_snow_description">雪量很轻，主要用于给画面补一点冬天气息</string>
+    <string name="seed_particle_moderate_snow_title">中雪</string>
+    <string name="seed_particle_moderate_snow_description">雪面更完整，适合户外或夜景类冬季场景</string>
+    <string name="seed_particle_blizzard_title">暴风雪</string>
+    <string name="seed_particle_blizzard_description">风向和雪量都更强，适合更封闭、更冷的空间气质</string>
+    <string name="seed_particle_no_particle_title">无效果</string>
+    <string name="seed_particle_no_particle_description">纯净背景，无粒子效果</string>
+    <string name="seed_particle_fireflies_title">萤火虫</string>
+    <string name="seed_particle_fireflies_description">零散暖光在暗处缓慢移动，适合夜湖与林间场景</string>
+
+</resources>
