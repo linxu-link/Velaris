@@ -372,7 +372,7 @@ fun SwipeUpPanel(
                             .width(spec.size.panelHandleWidth)
                             .height(spec.size.panelHandleHeight)
                             .clip(RoundedCornerShape(50))
-                            .background(spec.colors.stroke.copy(alpha = 0.32f)),
+                            .background(spec.colors.gold.copy(alpha = 0.8f)),
                     )
 
                     Box(

@@ -37,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.wujia.foundation.designsystem.modifier.velarisClickable
 import com.wujia.foundation.designsystem.preview.LandscapePreviews
 import com.wujia.foundation.designsystem.theme.VelarisTheme
@@ -106,9 +107,9 @@ private fun StepLine(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .padding(horizontal = spec.spacing.large)
-            .height(spec.size.stroke)
+            .height(2.dp)
             .fillMaxWidth()
-            .background(spec.colors.stroke.copy(alpha = spec.alpha.strokeStrong)),
+            .background(spec.colors.gold),
     )
 }
 

@@ -16,9 +16,10 @@
 package com.wujia.feature.scenecontrol.impl.ui.component
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Air
+import androidx.compose.material.icons.outlined.DarkMode
 import androidx.compose.material.icons.outlined.GraphicEq
 import androidx.compose.material.icons.outlined.WaterDrop
+import androidx.compose.material.icons.outlined.WbSunny
 import com.wujia.foundation.model.soundcontrol.SoundControlItem
 
 internal fun sampleSoundItems(): List<SoundControlItem> = listOf(
@@ -27,6 +28,6 @@ internal fun sampleSoundItems(): List<SoundControlItem> = listOf(
 )
 
 internal fun sampleLightItems(): List<SoundControlItem> = listOf(
-    SoundControlItem("亮度", Icons.Outlined.GraphicEq, 0.8f),
-    SoundControlItem("氛围", Icons.Outlined.Air, 0.6f),
+    SoundControlItem("亮度", Icons.Outlined.WbSunny, 0.8f),
+    SoundControlItem("氛围", Icons.Outlined.DarkMode, 0.6f),
 )

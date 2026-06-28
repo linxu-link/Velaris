@@ -196,8 +196,8 @@
     <string name="settings_theme_forest_desc">Softer and more natural green accent</string>
     <string name="settings_theme_twilight">Twilight Blue Purple</string>
     <string name="settings_theme_twilight_desc">Quiet, night-like cool tone theme</string>
-    <string name="settings_privacy">Privacy &amp; Ads</string>
-    <string name="settings_privacy_desc">View privacy policy and ad privacy options</string>
+    <string name="settings_privacy">Privacy Policy</string>
+    <string name="settings_privacy_desc">View privacy policy</string>
     <string name="settings_about">About %1$s</string>
     <string name="settings_about_desc">Version info and open source licenses</string>
 

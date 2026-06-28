@@ -95,15 +95,6 @@ internal fun CategoryTabs(
                     )
                 }
             }
-
-            if (index != categories.lastIndex) {
-                Box(
-                    modifier = Modifier
-                        .width(1.dp)
-                        .height(18.dp)
-                        .background(spec.colors.stroke.copy(alpha = spec.alpha.strokeStrong)),
-                )
-            }
         }
     }
 }

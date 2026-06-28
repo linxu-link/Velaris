@@ -352,15 +352,6 @@ fun SourceTabs(
                     )
                 }
             }
-
-            if (index != tabs.lastIndex) {
-                Box(
-                    modifier = Modifier
-                        .width(1.dp)
-                        .height(20.dp)
-                        .background(spec.colors.stroke.copy(alpha = spec.alpha.strokeStrong)),
-                )
-            }
         }
     }
 }

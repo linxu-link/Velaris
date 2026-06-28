@@ -28,10 +28,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Nightlight
-import androidx.compose.material.icons.outlined.Notifications
+import androidx.compose.material.icons.outlined.AccessTime
+import androidx.compose.material.icons.outlined.Alarm
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -156,12 +157,20 @@ fun SceneTimePanel(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Icon(
-                imageVector = Icons.Outlined.Nightlight,
-                contentDescription = null,
-                tint = spec.colors.goldSoft.copy(alpha = 0.82f),
-                modifier = Modifier.size(spec.size.iconLarge - spec.spacing.xSmall),
-            )
+            Box(
+                modifier = Modifier
+                    .size(spec.size.controlSmall)
+                    .clip(CircleShape)
+                    .background(spec.colors.stroke.copy(alpha = 0.08f)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.AccessTime,
+                    contentDescription = null,
+                    tint = spec.colors.goldSoft.copy(alpha = 0.82f),
+                    modifier = Modifier.size(spec.size.iconLarge - spec.spacing.xSmall),
+                )
+            }
 
             Spacer(Modifier.width(spec.spacing.small))
 
@@ -198,12 +207,20 @@ fun SceneTimePanel(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Icon(
-                imageVector = Icons.Outlined.Notifications,
-                contentDescription = null,
-                tint = spec.colors.goldSoft.copy(alpha = 0.82f),
-                modifier = Modifier.size(spec.size.iconLarge - spec.spacing.xSmall),
-            )
+            Box(
+                modifier = Modifier
+                    .size(spec.size.controlSmall)
+                    .clip(CircleShape)
+                    .background(spec.colors.stroke.copy(alpha = 0.08f)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.Alarm,
+                    contentDescription = null,
+                    tint = spec.colors.goldSoft.copy(alpha = 0.82f),
+                    modifier = Modifier.size(spec.size.iconLarge - spec.spacing.xSmall),
+                )
+            }
 
             Spacer(Modifier.width(spec.spacing.small))
 

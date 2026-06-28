@@ -20,8 +20,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.VolumeUp
-import androidx.compose.material.icons.outlined.Nightlight
+import androidx.compose.material.icons.outlined.AccessTime
+import androidx.compose.material.icons.outlined.Movie
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
@@ -85,7 +85,7 @@ internal fun PlayerSoundDialog(
                     listOf(
                         SoundControlItem(
                             title = clockAudioTitle,
-                            icon = Icons.Outlined.Nightlight,
+                            icon = Icons.Outlined.AccessTime,
                             value = clockAudioVolume,
                         ),
                     )
@@ -171,7 +171,7 @@ private fun SceneVideoResource?.toSoundControlItem(title: String): List<SoundCon
     listOf(
         SoundControlItem(
             title = title,
-            icon = Icons.AutoMirrored.Outlined.VolumeUp,
+            icon = Icons.Outlined.Movie,
             value = volume,
         ),
     )

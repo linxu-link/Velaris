@@ -435,7 +435,6 @@ private fun SoundPresetCard(
                 text = preset.description,
                 color = spec.colors.textSecondary.copy(alpha = spec.alpha.textSecondary),
                 fontSize = spec.typography.caption,
-                maxLines = if (compact) 2 else 1,
                 overflow = TextOverflow.Ellipsis,
             )
         }

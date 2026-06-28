@@ -17,8 +17,8 @@ package com.wujia.feature.scenecontrol.impl.ui
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.GraphicEq
-import androidx.compose.material.icons.outlined.Notifications
+import androidx.compose.material.icons.outlined.DarkMode
+import androidx.compose.material.icons.outlined.WbSunny
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -72,8 +72,8 @@ internal fun SceneControlScreen(modifier: Modifier = Modifier, sceneName: String
         val darkLabel = stringResource(R.string.scene_control_dark)
         val visualControlItems = remember(brightness, darkness, brightnessLabel, darkLabel) {
             listOf(
-                SoundControlItem(brightnessLabel, Icons.Outlined.GraphicEq, brightness),
-                SoundControlItem(darkLabel, Icons.Outlined.Notifications, darkness),
+                SoundControlItem(brightnessLabel, Icons.Outlined.WbSunny, brightness),
+                SoundControlItem(darkLabel, Icons.Outlined.DarkMode, darkness),
             )
         }
 

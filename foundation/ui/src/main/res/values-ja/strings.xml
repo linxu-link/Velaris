@@ -196,8 +196,8 @@
     <string name="settings_theme_forest_desc">より柔らかく自然な緑の強調</string>
     <string name="settings_theme_twilight">夕暮れの青紫</string>
     <string name="settings_theme_twilight_desc">静かで夜のような冷たいトーンのテーマ</string>
-    <string name="settings_privacy">プライバシーと広告</string>
-    <string name="settings_privacy_desc">プライバシーポリシーと広告のプライバシーオプションを確認</string>
+    <string name="settings_privacy">プライバシーポリシー</string>
+    <string name="settings_privacy_desc">プライバシーポリシーを確認</string>
     <string name="settings_about">%1$sについて</string>
     <string name="settings_about_desc">バージョン情報とオープンソースライセンス</string>
 

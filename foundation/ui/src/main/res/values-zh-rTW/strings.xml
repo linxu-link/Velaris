@@ -196,8 +196,8 @@
     <string name="settings_theme_forest_desc">更柔和自然的綠色強調</string>
     <string name="settings_theme_twilight">暮藍紫</string>
     <string name="settings_theme_twilight_desc">安靜、偏夜色的冷調主題</string>
-    <string name="settings_privacy">隱私與廣告</string>
-    <string name="settings_privacy_desc">查看隱私政策和廣告隱私選項</string>
+    <string name="settings_privacy">隱私政策</string>
+    <string name="settings_privacy_desc">查看隱私政策</string>
     <string name="settings_about">關於 %1$s</string>
     <string name="settings_about_desc">版本資訊和開源許可</string>
 

@@ -293,7 +293,7 @@ fun defaultLocalScenes(): List<LocalSeedScene> = listOf(
             LocalSeedAudio(
                 id = ProjectsIds.Noise.TRAIN,
                 titleResId = R.string.seed_noise_train_title,
-                rawResId = ModelR.raw.sleep_train_night,
+                rawResId = ModelR.raw.old_train_1,
                 volume = 0.6f,
             ),
         ),
