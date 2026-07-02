@@ -44,16 +44,16 @@ fun adProperty(name: String, fallback: String): String {
         ?: fallback
 }
 
+fun requiredAdProperty(name: String): String {
+    return providers.gradleProperty(name).orNull
+        ?: localProperties.getProperty(name)
+        ?: error("Missing required release ad property: $name")
+}
+
 val googleMobileAdsTestAppId = "ca-app-pub-3940256099942544~3347511713"
 val googleAppOpenTestAdUnitId = "ca-app-pub-3940256099942544/9257395921"
-val releaseGoogleMobileAdsAppId = adProperty(
-    name = "velaris.ads.release.appId",
-    fallback = googleMobileAdsTestAppId,
-)
-val releaseAppOpenAdUnitId = adProperty(
-    name = "velaris.ads.release.appOpenAdUnitId",
-    fallback = googleAppOpenTestAdUnitId,
-)
+val releaseGoogleMobileAdsAppId = requiredAdProperty("velaris.ads.release.appId")
+val releaseAppOpenAdUnitId = requiredAdProperty("velaris.ads.release.appOpenAdUnitId")
 
 android {
     defaultConfig {

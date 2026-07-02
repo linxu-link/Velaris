@@ -281,31 +281,30 @@ internal interface ManagedAppOpenAd {
 }
 
 internal class GoogleAppOpenAdLoaderWrapper @Inject constructor() : GoogleAppOpenAdLoader {
-    override suspend fun load(activity: Activity, adUnitId: String): GoogleAppOpenAdLoadResult =
-        suspendCancellableCoroutine { continuation ->
-            AppOpenAd.load(
-                activity,
-                adUnitId,
-                AdRequest.Builder().build(),
-                object : AppOpenAd.AppOpenAdLoadCallback() {
-                    override fun onAdLoaded(ad: AppOpenAd) {
-                        if (continuation.isActive) {
-                            continuation.resume(
-                                GoogleAppOpenAdLoadResult.Success(
-                                    RealManagedAppOpenAd(ad),
-                                ),
-                            )
-                        }
+    override suspend fun load(activity: Activity, adUnitId: String): GoogleAppOpenAdLoadResult = suspendCancellableCoroutine { continuation ->
+        AppOpenAd.load(
+            activity,
+            adUnitId,
+            AdRequest.Builder().build(),
+            object : AppOpenAd.AppOpenAdLoadCallback() {
+                override fun onAdLoaded(ad: AppOpenAd) {
+                    if (continuation.isActive) {
+                        continuation.resume(
+                            GoogleAppOpenAdLoadResult.Success(
+                                RealManagedAppOpenAd(ad),
+                            ),
+                        )
                     }
+                }
 
-                    override fun onAdFailedToLoad(error: LoadAdError) {
-                        if (continuation.isActive) {
-                            continuation.resume(GoogleAppOpenAdLoadResult.Failure(error.toAdsError()))
-                        }
+                override fun onAdFailedToLoad(error: LoadAdError) {
+                    if (continuation.isActive) {
+                        continuation.resume(GoogleAppOpenAdLoadResult.Failure(error.toAdsError()))
                     }
-                },
-            )
-        }
+                }
+            },
+        )
+    }
 }
 
 private class RealManagedAppOpenAd(private val delegate: AppOpenAd) : ManagedAppOpenAd {

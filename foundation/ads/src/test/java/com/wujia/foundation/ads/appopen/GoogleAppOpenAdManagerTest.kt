@@ -119,8 +119,7 @@ private class FakeAdsConfigProvider(private val config: AdsConfig) : AdsConfigPr
     override fun getConfig(): AdsConfig = config
 }
 
-private class FakeAdsInitializer(private val result: AdsInitializationResult = AdsInitializationResult.Success) :
-    AdsInitializer {
+private class FakeAdsInitializer(private val result: AdsInitializationResult = AdsInitializationResult.Success) : AdsInitializer {
     override suspend fun initialize(activity: Activity): AdsInitializationResult = result
 }
 
@@ -134,8 +133,7 @@ private class FakeGoogleAppOpenAdLoader : GoogleAppOpenAdLoader {
 }
 
 private class HangingGoogleAppOpenAdLoader : GoogleAppOpenAdLoader {
-    override suspend fun load(activity: Activity, adUnitId: String): GoogleAppOpenAdLoadResult =
-        suspendCancellableCoroutine { }
+    override suspend fun load(activity: Activity, adUnitId: String): GoogleAppOpenAdLoadResult = suspendCancellableCoroutine { }
 }
 
 private class SuccessGoogleAppOpenAdLoader(private val ad: FakeManagedAppOpenAd) : GoogleAppOpenAdLoader {

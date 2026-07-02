@@ -19,7 +19,7 @@ package com.wujia.foundation.ads
  * 广告配置数据类
  *
  * 包含广告 SDK 的全局配置参数，如是否启用广告、调试模式、
- * 测试设备 ID、调试地理位置和激励广告子配置。
+ * 测试设备 ID、调试地理位置和开屏广告子配置。
  */
 data class AdsConfig(
     val enabled: Boolean = true,
@@ -29,7 +29,6 @@ data class AdsConfig(
     val tagForChildDirectedTreatment: Boolean? = null,
     val tagForUnderAgeOfConsent: Boolean? = null,
     val appOpenAdConfig: AppOpenAdConfig = AppOpenAdConfig(),
-    val rewardedAdConfig: RewardedAdConfig = RewardedAdConfig(),
 )
 
 /**
@@ -59,18 +58,4 @@ data class AppOpenAdConfig(
     val preloadTimeoutMillis: Long = 1_500L,
 )
 
-/**
- * 激励广告子配置
- *
- * @property newSceneSaveAdUnitId 保存新场景时展示的激励广告单元 ID
- * @property hourlyCooldownMillis 获得奖励后的冷却时间（毫秒），冷却期内不再展示广告
- * @property dailyRewardLimit 每日最大奖励次数，达到上限后当日不再展示广告
- */
-data class RewardedAdConfig(
-    val newSceneSaveAdUnitId: String = GOOGLE_REWARDED_TEST_AD_UNIT_ID,
-    val hourlyCooldownMillis: Long = 60 * 60 * 1000L,
-    val dailyRewardLimit: Int = 10,
-)
-
-internal const val GOOGLE_REWARDED_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917"
 internal const val GOOGLE_APP_OPEN_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/9257395921"

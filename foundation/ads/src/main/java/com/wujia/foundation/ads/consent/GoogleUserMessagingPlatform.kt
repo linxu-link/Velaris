@@ -57,44 +57,39 @@ internal interface GoogleUserMessagingPlatform {
 internal class GoogleUserMessagingPlatformWrapper @Inject constructor() : GoogleUserMessagingPlatform {
     override fun canRequestAds(context: Context): Boolean = consentInformation(context).canRequestAds()
 
-    override fun isPrivacyOptionsRequired(context: Context): Boolean =
-        consentInformation(context).privacyOptionsRequirementStatus ==
-            ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED
+    override fun isPrivacyOptionsRequired(context: Context): Boolean = consentInformation(context).privacyOptionsRequirementStatus ==
+        ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED
 
-    override suspend fun requestConsentInfoUpdate(activity: Activity, config: AdsConfig): AdsError? =
-        suspendCancellableCoroutine { continuation ->
-            consentInformation(activity).requestConsentInfoUpdate(
-                activity,
-                config.toConsentRequestParameters(activity),
-                {
-                    continuation.resumeIfActive(null)
-                },
-                { error ->
-                    continuation.resumeIfActive(error.toAdsError())
-                },
-            )
-        }
+    override suspend fun requestConsentInfoUpdate(activity: Activity, config: AdsConfig): AdsError? = suspendCancellableCoroutine { continuation ->
+        consentInformation(activity).requestConsentInfoUpdate(
+            activity,
+            config.toConsentRequestParameters(activity),
+            {
+                continuation.resumeIfActive(null)
+            },
+            { error ->
+                continuation.resumeIfActive(error.toAdsError())
+            },
+        )
+    }
 
-    override suspend fun loadAndShowConsentFormIfRequired(activity: Activity): AdsError? =
-        suspendCancellableCoroutine { continuation ->
-            UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity) { error ->
-                continuation.resumeIfActive(error?.toAdsError())
-            }
+    override suspend fun loadAndShowConsentFormIfRequired(activity: Activity): AdsError? = suspendCancellableCoroutine { continuation ->
+        UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity) { error ->
+            continuation.resumeIfActive(error?.toAdsError())
         }
+    }
 
-    override suspend fun showPrivacyOptionsForm(activity: Activity): AdsError? =
-        suspendCancellableCoroutine { continuation ->
-            UserMessagingPlatform.showPrivacyOptionsForm(activity) { error ->
-                continuation.resumeIfActive(error?.toAdsError())
-            }
+    override suspend fun showPrivacyOptionsForm(activity: Activity): AdsError? = suspendCancellableCoroutine { continuation ->
+        UserMessagingPlatform.showPrivacyOptionsForm(activity) { error ->
+            continuation.resumeIfActive(error?.toAdsError())
         }
+    }
 
     override fun reset(context: Context) {
         consentInformation(context).reset()
     }
 
-    private fun consentInformation(context: Context): ConsentInformation =
-        UserMessagingPlatform.getConsentInformation(context)
+    private fun consentInformation(context: Context): ConsentInformation = UserMessagingPlatform.getConsentInformation(context)
 
     private fun AdsConfig.toConsentRequestParameters(context: Context): ConsentRequestParameters {
         val builder = ConsentRequestParameters.Builder()

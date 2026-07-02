@@ -85,7 +85,7 @@ foundation/testing (AAR)
 
 ### 4.1 FakeSceneResourceRepository
 
-**文件路径**：`/persistent/home/link/AndroidStudioProjects/Velaris/foundation/testing/src/main/java/com/wujia/foundation/testing/FakeSceneResourceRepository.kt`（第 21-84 行）
+**文件路径**：`foundation/testing/src/main/java/com/wujia/foundation/testing/FakeSceneResourceRepository.kt`（第 21-84 行）
 
 **实现接口**：`com.wujia.foundation.model.scene.SceneResourceRepository`
 
@@ -125,7 +125,7 @@ foundation/testing (AAR)
 
 ### 4.2 MainDispatcherRule
 
-**文件路径**：`/persistent/home/link/AndroidStudioProjects/Velaris/foundation/testing/src/main/java/com/wujia/foundation/testing/MainDispatcherRule.kt`（第 13-23 行）
+**文件路径**：`foundation/testing/src/main/java/com/wujia/foundation/testing/MainDispatcherRule.kt`（第 13-23 行）
 
 **继承关系**：`TestWatcher`（JUnit 4）
 
@@ -169,7 +169,7 @@ class MyViewModelTest {
 
 | 类名                    | 文件路径                                                                                                                               | 行号     | 实现接口             | 说明                                     |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------|----------------------|------------------------------------------|
-| `FakeSceneControlClock` | `/persistent/home/link/AndroidStudioProjects/Velaris/feature/sceneControl/impl/src/test/java/com/wujia/feature/scenecontrol/impl/ui/SceneControlViewModelTest.kt` | 第 358 行 | `SceneControlClock`  | 可配置当前时间戳的时钟替身                |
+| `FakeSceneControlClock` | `feature/sceneControl/impl/src/test/java/com/wujia/feature/scenecontrol/impl/ui/SceneControlViewModelTest.kt` | 第 358 行 | `SceneControlClock`  | 可配置当前时间戳的时钟替身                |
 
 ```kotlin
 private class FakeSceneControlClock(
@@ -181,7 +181,7 @@ private class FakeSceneControlClock(
 
 #### 4.3.2 feature/sceneEdit/impl
 
-文件路径：`/persistent/home/link/AndroidStudioProjects/Velaris/feature/sceneEdit/impl/src/test/java/com/wujia/feature/sceneedit/impl/ui/SceneEditViewModelTest.kt`
+文件路径：`feature/sceneEdit/impl/src/test/java/com/wujia/feature/sceneedit/impl/ui/SceneEditViewModelTest.kt`
 
 | 类名                           | 行号     | 实现接口                    | 说明                                                        |
 |--------------------------------|----------|-----------------------------|-------------------------------------------------------------|
@@ -201,7 +201,7 @@ private class FakeMediaRepository : MediaRepository {
 
 #### 4.3.3 foundation/ads - GoogleAdsInitializerTest
 
-文件路径：`/persistent/home/link/AndroidStudioProjects/Velaris/foundation/ads/src/test/java/com/wujia/foundation/ads/initialization/GoogleAdsInitializerTest.kt`
+文件路径：`foundation/ads/src/test/java/com/wujia/foundation/ads/initialization/GoogleAdsInitializerTest.kt`
 
 | 类名                   | 行号     | 实现接口           | 说明                                                   |
 |------------------------|----------|--------------------|--------------------------------------------------------|
@@ -215,32 +215,6 @@ private class FakeGoogleAdsSdk : GoogleAdsSdk {
     var applyRequestConfigurationCalls = 0
     override suspend fun initialize(context: android.content.Context) { initializeCalls += 1 }
     override fun applyRequestConfiguration(config: AdsConfig) { applyRequestConfigurationCalls += 1 }
-}
-```
-
-#### 4.3.4 foundation/ads - RewardedAdGatekeeperTest
-
-文件路径：`/persistent/home/link/AndroidStudioProjects/Velaris/foundation/ads/src/test/java/com/wujia/foundation/ads/RewardedAdGatekeeperTest.kt`
-
-| 类名                         | 行号     | 实现接口                | 说明                                                   |
-|------------------------------|----------|-------------------------|--------------------------------------------------------|
-| `FakeRewardedAdsConfigProvider` | 第 153 行 | `AdsConfigProvider`     | 返回构造时注入的 `AdsConfig`                            |
-| `FakeRewardedAdClock`          | 第 159 行 | `RewardedAdClock`       | 可变的 `nowMillis` 属性，用于模拟时间流逝              |
-| `FakeRewardedAdUsageStore`     | 第 165 行 | `RewardedAdUsageStore`  | 返回预设使用数据，记录 `recordRewardEarned` 调用次数和时间 |
-| `FakeRewardedAdManager`        | 第 184 行 | `RewardedAdManager`     | 返回预设的 `RewardedAdResult`，记录 `show` 调用次数    |
-
-```kotlin
-private class FakeRewardedAdUsageStore(
-    private val usage: RewardedAdUsage,
-) : RewardedAdUsageStore {
-    var recordCalls = 0
-    var lastRecordedNowMillis: Long? = null
-    override suspend fun getUsage(placement: RewardedAdPlacement): RewardedAdUsage = usage
-    override suspend fun recordRewardEarned(placement: RewardedAdPlacement, nowMillis: Long) {
-        recordCalls += 1
-        lastRecordedNowMillis = nowMillis
-    }
-    override suspend fun clearDebugOnly() = Unit
 }
 ```
 
@@ -311,11 +285,11 @@ foundation.ads (不依赖 foundation.testing，本地维护自己的 Fake 类)
 
 ### 6.2 foundation/ads 模块未接入共享测试基础设施
 
-**现状**：`foundation/ads` 模块的测试自行管理 `StandardTestDispatcher`，自行编写了 7 个 Fake 类（`FakeAdsConfigProvider`、`FakeAdsConsentManager`、`FakeGoogleAdsSdk`、`FakeRewardedAdsConfigProvider`、`FakeRewardedAdClock`、`FakeRewardedAdUsageStore`、`FakeRewardedAdManager`），且不使用 `MainDispatcherRule`。
+**现状**：`foundation/ads` 模块的测试自行管理 `StandardTestDispatcher`，自行编写了 `FakeAdsConfigProvider`、`FakeAdsConsentManager`、`FakeGoogleAdsSdk` 等 Fake 类，且不使用 `MainDispatcherRule`。
 
 **影响**：
 - 协程调度器的管理方式不统一：其他模块通过 `MainDispatcherRule` 统一管理，而 ads 模块直接在 `runTest(testDispatcher)` 中传入 dispatcher。
-- ads 模块的 Fake 类虽全部为 `private`，但 `FakeRewardedAdsConfigProvider` 与 `GoogleAdsInitializerTest` 中的 `FakeAdsConfigProvider` 实现完全相同，存在隐性重复。
+- ads 模块的 Fake 类全部为 `private`，当前仅服务模块内测试。
 
 **建议**：
 1. 评估 ads 模块是否可以引入 `MainDispatcherRule`，统一协程调度器管理模式。

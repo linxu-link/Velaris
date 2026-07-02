@@ -21,7 +21,7 @@ Velaris 是一个横屏沉浸式场景应用。核心体验围绕“场景”展
 - `:foundation:designsystem`、`:foundation:ui`：通用 Compose 组件、主题规格和业务 UI 组件。
 - `:foundation:player`：音频、视频播放控制和播放器池。
 - `:foundation:particle`：雨雪等天气粒子渲染。
-- `:foundation:ads`：广告配置、同意流程、激励广告管理。
+- `:foundation:ads`：广告配置、同意流程、开屏广告管理。
 - `:foundation:toolkit`：应用上下文、协程、屏幕、权限、文件等工具能力。
 - `:foundation:testing`：测试 fake 和测试规则。
 - `:sync:work`：启动同步与数据库 seed，基于 WorkManager。

@@ -23,8 +23,6 @@ import com.wujia.foundation.ads.AdsDebugGeography
 import com.wujia.foundation.ads.AppOpenAdConfig
 import com.wujia.foundation.ads.BuildConfig
 import com.wujia.foundation.ads.GOOGLE_APP_OPEN_TEST_AD_UNIT_ID
-import com.wujia.foundation.ads.GOOGLE_REWARDED_TEST_AD_UNIT_ID
-import com.wujia.foundation.ads.RewardedAdConfig
 import dagger.hilt.android.qualifiers.ApplicationContext
 import timber.log.Timber
 import javax.inject.Inject
@@ -33,7 +31,7 @@ import javax.inject.Inject
  * 基于 BuildConfig 的广告配置提供者
  *
  * 从模块编译时生成的 [BuildConfig] 字段读取广告配置，
- * 包括是否启用广告、调试模式、测试设备 ID、调试地理位置和激励广告单元 ID。
+ * 包括是否启用广告、调试模式、测试设备 ID、调试地理位置和开屏广告单元 ID。
  * 在非调试模式下使用测试广告单元 ID 时会打印警告日志。
  */
 class BuildConfigAdsConfigProvider @Inject constructor(
@@ -45,11 +43,6 @@ class BuildConfigAdsConfigProvider @Inject constructor(
             appOpenAdUnitId == GOOGLE_APP_OPEN_TEST_AD_UNIT_ID
         ) {
             Timber.w("Production app open ad unit id is missing; using Google test app open ad unit id")
-        }
-        if (!BuildConfig.ADS_DEBUG &&
-            BuildConfig.ADS_REWARDED_NEW_SCENE_SAVE_AD_UNIT_ID == GOOGLE_REWARDED_TEST_AD_UNIT_ID
-        ) {
-            Timber.w("Production rewarded ad unit id is missing; using Google test rewarded ad unit id")
         }
         return AdsConfig(
             enabled = BuildConfig.ADS_ENABLED,
@@ -63,9 +56,6 @@ class BuildConfigAdsConfigProvider @Inject constructor(
                 adUnitId = appOpenAdUnitId,
                 showTimeoutMillis = BuildConfig.ADS_APP_OPEN_SHOW_TIMEOUT_MILLIS,
                 preloadTimeoutMillis = BuildConfig.ADS_APP_OPEN_PRELOAD_TIMEOUT_MILLIS,
-            ),
-            rewardedAdConfig = RewardedAdConfig(
-                newSceneSaveAdUnitId = BuildConfig.ADS_REWARDED_NEW_SCENE_SAVE_AD_UNIT_ID,
             ),
         )
     }

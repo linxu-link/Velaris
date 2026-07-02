@@ -64,7 +64,7 @@ Database (Room DAOs + Entities)
 :foundation:ui                    — 业务级共享 Compose UI 组件
 :foundation:player                — 音视频播放器（Media3/ExoPlayer）
 :foundation:particle              — 天气粒子渲染（雨、雪）
-:foundation:ads                   — Google 广告、用户同意流程、激励广告
+:foundation:ads                   — Google 开屏广告、用户同意流程
 :foundation:alarm                 — 闹钟提醒控制器（系统铃声 + AudioFocus，配合 alarmReminderEnabled）
 :foundation:jetpack               — Jetpack 扩展工具（OffsetPagingSource 等）
 :foundation:toolkit               — 工具类（context、coroutine、screen、permission、file 等）
@@ -173,7 +173,7 @@ advance {
 |---|---|
 | `gpr.user` / `gpr.key` | GitHub Packages 认证 |
 | `minifyWithR8` | Release 混淆开关（默认 `true`） |
-| `velaris.adsDebug` | 广告调试模式（默认 `true`） |
+| `velaris.adsDebug` | 广告调试模式（仅 debug 构建，默认 `true`；release 强制 `false`） |
 
 ### 常用构建命令
 

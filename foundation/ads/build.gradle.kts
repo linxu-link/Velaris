@@ -28,6 +28,9 @@ val localProperties = Properties().apply {
     }
 }
 
+fun localBooleanProperty(name: String, default: Boolean): Boolean =
+    localProperties.getProperty(name)?.toBooleanStrictOrNull() ?: default
+
 android {
     namespace = "com.wujia.foundation.ads"
 
@@ -37,18 +40,10 @@ android {
 
     defaultConfig {
         buildConfigField("boolean", "ADS_ENABLED", "true")
-        buildConfigField("boolean", "ADS_DEBUG", providers.gradleProperty("velaris.adsDebug").orElse("true").get())
+        buildConfigField("boolean", "ADS_DEBUG", "false")
         buildConfigField("boolean", "ADS_SKIP_CONSENT_FLOW_IN_DEBUG", "false")
-        buildConfigField(
-            "String",
-            "ADS_TEST_DEVICE_HASHED_IDS",
-            "\"${localProperties.getProperty("velaris.adsTestDeviceHashedIds", "")}\"",
-        )
-        buildConfigField(
-            "String",
-            "ADS_DEBUG_GEOGRAPHY",
-            "\"${localProperties.getProperty("velaris.adsDebugGeography", "DISABLED")}\"",
-        )
+        buildConfigField("String", "ADS_TEST_DEVICE_HASHED_IDS", "\"\"")
+        buildConfigField("String", "ADS_DEBUG_GEOGRAPHY", "\"DISABLED\"")
         buildConfigField(
             "String",
             "ADS_APP_OPEN_AD_UNIT_ID",
@@ -64,13 +59,38 @@ android {
             "ADS_APP_OPEN_PRELOAD_TIMEOUT_MILLIS",
             providers.gradleProperty("velaris.appOpenPreloadTimeoutMillis").orElse("5000").get(),
         )
-        buildConfigField(
-            "String",
-            "ADS_REWARDED_NEW_SCENE_SAVE_AD_UNIT_ID",
-            "\"${providers.gradleProperty("velaris.rewardedNewSceneSaveAdUnitId").orElse("ca-app-pub-3940256099942544/5224354917").get()}\"",
-        )
     }
 
+    buildTypes {
+        debug {
+            buildConfigField(
+                "boolean",
+                "ADS_DEBUG",
+                providers.gradleProperty("velaris.adsDebug").orElse("true").get(),
+            )
+            buildConfigField(
+                "boolean",
+                "ADS_SKIP_CONSENT_FLOW_IN_DEBUG",
+                localBooleanProperty("velaris.adsSkipConsentFlowInDebug", true).toString(),
+            )
+            buildConfigField(
+                "String",
+                "ADS_TEST_DEVICE_HASHED_IDS",
+                "\"${localProperties.getProperty("velaris.adsTestDeviceHashedIds", "")}\"",
+            )
+            buildConfigField(
+                "String",
+                "ADS_DEBUG_GEOGRAPHY",
+                "\"${localProperties.getProperty("velaris.adsDebugGeography", "DISABLED")}\"",
+            )
+        }
+        release {
+            buildConfigField("boolean", "ADS_DEBUG", "false")
+            buildConfigField("boolean", "ADS_SKIP_CONSENT_FLOW_IN_DEBUG", "false")
+            buildConfigField("String", "ADS_TEST_DEVICE_HASHED_IDS", "\"\"")
+            buildConfigField("String", "ADS_DEBUG_GEOGRAPHY", "\"DISABLED\"")
+        }
+    }
 }
 
 dependencies {

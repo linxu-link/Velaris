@@ -19,10 +19,6 @@ import com.wujia.foundation.ads.AdsConfigProvider
 import com.wujia.foundation.ads.AdsConsentManager
 import com.wujia.foundation.ads.AdsInitializer
 import com.wujia.foundation.ads.AppOpenAdManager
-import com.wujia.foundation.ads.DefaultRewardedAdGatekeeper
-import com.wujia.foundation.ads.RewardedAdGatekeeper
-import com.wujia.foundation.ads.RewardedAdManager
-import com.wujia.foundation.ads.RewardedAdUsageStore
 import com.wujia.foundation.ads.appopen.GoogleAppOpenAdLoader
 import com.wujia.foundation.ads.appopen.GoogleAppOpenAdLoaderWrapper
 import com.wujia.foundation.ads.appopen.GoogleAppOpenAdManager
@@ -33,12 +29,6 @@ import com.wujia.foundation.ads.consent.GoogleUserMessagingPlatformWrapper
 import com.wujia.foundation.ads.initialization.GoogleAdsInitializer
 import com.wujia.foundation.ads.initialization.GoogleAdsSdk
 import com.wujia.foundation.ads.initialization.GoogleAdsSdkWrapper
-import com.wujia.foundation.ads.rewarded.GoogleRewardedAdLoader
-import com.wujia.foundation.ads.rewarded.GoogleRewardedAdLoaderWrapper
-import com.wujia.foundation.ads.rewarded.GoogleRewardedAdManager
-import com.wujia.foundation.ads.rewarded.RewardedAdClock
-import com.wujia.foundation.ads.rewarded.SharedPreferencesRewardedAdUsageStore
-import com.wujia.foundation.ads.rewarded.SystemRewardedAdClock
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -53,7 +43,7 @@ import javax.inject.Singleton
  * - [com.wujia.foundation.ads.config]：广告配置读取
  * - [com.wujia.foundation.ads.consent]：用户隐私同意管理
  * - [com.wujia.foundation.ads.initialization]：广告 SDK 初始化
- * - [com.wujia.foundation.ads.rewarded]：激励广告加载、展示和频率控制
+ * - [com.wujia.foundation.ads.appopen]：开屏广告加载和展示
  */
 @Module
 @InstallIn(SingletonComponent::class)
@@ -85,24 +75,4 @@ internal interface AdsModule {
     @Binds
     @Singleton
     fun bindsGoogleAppOpenAdLoader(loader: GoogleAppOpenAdLoaderWrapper): GoogleAppOpenAdLoader
-
-    @Binds
-    @Singleton
-    fun bindsRewardedAdManager(manager: GoogleRewardedAdManager): RewardedAdManager
-
-    @Binds
-    @Singleton
-    fun bindsRewardedAdGatekeeper(gatekeeper: DefaultRewardedAdGatekeeper): RewardedAdGatekeeper
-
-    @Binds
-    @Singleton
-    fun bindsRewardedAdUsageStore(store: SharedPreferencesRewardedAdUsageStore): RewardedAdUsageStore
-
-    @Binds
-    @Singleton
-    fun bindsRewardedAdClock(clock: SystemRewardedAdClock): RewardedAdClock
-
-    @Binds
-    @Singleton
-    fun bindsGoogleRewardedAdLoader(loader: GoogleRewardedAdLoaderWrapper): GoogleRewardedAdLoader
 }
